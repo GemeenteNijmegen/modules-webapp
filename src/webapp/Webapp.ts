@@ -1,4 +1,4 @@
-import { HttpMethod } from '@aws-cdk/aws-apigatewayv2-alpha';
+import { HttpMethod } from 'aws-cdk-lib/aws-apigatewayv2';
 import { IGrantable, IPrincipal } from 'aws-cdk-lib/aws-iam';
 import { Construct } from 'constructs';
 import { Api } from './Api';
@@ -8,16 +8,18 @@ import { WebappOptions } from './WebappOptions';
 import { Webpage } from './Webpage';
 
 export class Webapp extends Construct implements IGrantable {
-  readonly api: Api;
-  readonly cloudfront: Cloudfront;
-  readonly sessions: SessionsTable;
+  private readonly api: Api;
+  private readonly cloudfront: Cloudfront;
+  private readonly sessions: SessionsTable;
 
   constructor(scope: Construct, id: string, props: WebappOptions) {
     super(scope, id);
 
     // Defaults
-    props.sessionLifetime = props.sessionLifetime ?? 15;
-
+    props = {
+      sessionLifetime: props.sessionLifetime ?? 15,
+      ...props,
+    };
     // Sessions
     this.sessions = new SessionsTable(this, 'sessions', {
       name: `${props.applicationName}-sessions-table`,

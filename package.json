@@ -7,6 +7,13 @@
   "scripts": {
     "build": "npx projen build",
     "bump": "npx projen bump",
+    "bundle": "npx projen bundle",
+    "bundle:webapp/auth/auth.lambda": "npx projen bundle:webapp/auth/auth.lambda",
+    "bundle:webapp/auth/auth.lambda:watch": "npx projen bundle:webapp/auth/auth.lambda:watch",
+    "bundle:webapp/login/login.lambda": "npx projen bundle:webapp/login/login.lambda",
+    "bundle:webapp/login/login.lambda:watch": "npx projen bundle:webapp/login/login.lambda:watch",
+    "bundle:webapp/logout/logout.lambda": "npx projen bundle:webapp/logout/logout.lambda",
+    "bundle:webapp/logout/logout.lambda:watch": "npx projen bundle:webapp/logout/logout.lambda:watch",
     "clobber": "npx projen clobber",
     "compat": "npx projen compat",
     "compile": "npx projen compile",
@@ -29,18 +36,27 @@
     "projen": "npx projen"
   },
   "author": {
-    "name": "Marnix Dessing",
-    "email": "m.dessing@nijmegen.nl",
+    "name": "Gemeente Nijmegen",
     "organization": false
   },
   "devDependencies": {
+    "@aws-sdk/types": "^3.496.0",
+    "@axe-core/playwright": "^4.8.3",
     "@gemeentenijmegen/projen-project-type": "^1.5.4",
+    "@glen/jest-raw-loader": "^2.0.0",
+    "@playwright/test": "^1.41.1",
+    "@types/aws-lambda": "^8.10.131",
     "@types/jest": "^27",
+    "@types/mustache": "^4.2.5",
     "@types/node": "^16",
     "@typescript-eslint/eslint-plugin": "^6",
     "@typescript-eslint/parser": "^6",
-    "aws-cdk-lib": "2.1.0",
+    "aws-cdk-lib": "2.122.0",
+    "aws-sdk-client-mock": "^3.0.1",
+    "axios-mock-adapter": "^1.22.0",
     "constructs": "10.0.5",
+    "copyfiles": "^2.4.1",
+    "esbuild": "^0.19.12",
     "eslint": "^8",
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-import": "^2.29.1",
@@ -57,9 +73,42 @@
     "typescript": "^5.3.3"
   },
   "peerDependencies": {
-    "aws-cdk-lib": "^2.1.0",
+    "aws-cdk-lib": "^2.122.0",
     "constructs": "^10.0.5"
   },
+  "dependencies": {
+    "@aws-lambda-powertools/logger": "^1.17.0",
+    "@aws-sdk/client-dynamodb": "^3.496.0",
+    "@aws-sdk/client-secrets-manager": "^3.496.0",
+    "@aws-solutions-constructs/aws-lambda-dynamodb": "^2.49.0",
+    "@gemeentenijmegen/apiclient": "^0.0.10",
+    "@gemeentenijmegen/apigateway-http": "^0.0.7",
+    "@gemeentenijmegen/aws-constructs": "^0.0.4",
+    "@gemeentenijmegen/session": "^0.0.8",
+    "@gemeentenijmegen/utils": "^0.0.5",
+    "axios": "^1.6.5",
+    "cdk-remote-stack": "^2.0.101",
+    "cookie": "^0.6.0",
+    "dotenv": "^16.4.0",
+    "mustache": "^4.2.0",
+    "openid-client": "^5.6.4"
+  },
+  "bundledDependencies": [
+    "@aws-lambda-powertools/logger",
+    "@aws-sdk/client-dynamodb",
+    "@aws-sdk/client-secrets-manager",
+    "@aws-solutions-constructs/aws-lambda-dynamodb",
+    "@gemeentenijmegen/apiclient",
+    "@gemeentenijmegen/apigateway-http",
+    "@gemeentenijmegen/session",
+    "@gemeentenijmegen/utils",
+    "axios",
+    "cdk-remote-stack",
+    "cookie",
+    "dotenv",
+    "mustache",
+    "openid-client"
+  ],
   "resolutions": {
     "@types/babel__traverse": "7.18.2",
     "@types/prettier": "2.6.0"
@@ -71,6 +120,31 @@
   "license": "EUPL-1.2",
   "version": "0.0.0",
   "jest": {
+    "setupFiles": [
+      "dotenv/config"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "jsx",
+      "ts",
+      "tsx",
+      "node",
+      "mustache"
+    ],
+    "transform": {
+      "\\.[jt]sx?$": "ts-jest",
+      "^.+\\.mustache$": "@glen/jest-raw-loader"
+    },
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/cdk.out",
+      "/test/playwright"
+    ],
+    "roots": [
+      "src",
+      "test"
+    ],
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.ts?(x)",
       "<rootDir>/(test|src)/**/*(*.)@(spec|test).ts?(x)"
@@ -86,10 +160,9 @@
     ],
     "coverageDirectory": "coverage",
     "coveragePathIgnorePatterns": [
-      "/node_modules/"
-    ],
-    "testPathIgnorePatterns": [
-      "/node_modules/"
+      "/node_modules/",
+      "/cdk.out",
+      "/test/playwright"
     ],
     "watchPathIgnorePatterns": [
       "/node_modules/"

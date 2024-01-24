@@ -146,7 +146,10 @@
       {
         "devDependencies": [
           "**/test/**",
-          "**/build-tools/**"
+          "**/build-tools/**",
+          "src/webapp/auth/auth.lambda.ts",
+          "src/webapp/login/login.lambda.ts",
+          "src/webapp/logout/logout.lambda.ts"
         ],
         "optionalDependencies": false,
         "peerDependencies": true

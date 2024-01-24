@@ -53,6 +53,10 @@ junit.xml
 .jsii
 tsconfig.json
 !/API.md
+/assets/
+!/src/webapp/auth/auth-function.ts
+!/src/webapp/login/login-function.ts
+!/src/webapp/logout/logout-function.ts
 !/.github/workflows/emergency.yml
 !/.github/workflows/auto-merge.yml
 !/.projenrc.js

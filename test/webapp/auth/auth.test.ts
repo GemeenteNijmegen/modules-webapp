@@ -1,11 +1,11 @@
 import { DynamoDBClient, GetItemCommand, GetItemCommandOutput } from '@aws-sdk/client-dynamodb';
 import { mockClient } from 'aws-sdk-client-mock';
-import { OpenIDConnect } from '../../../src/webapp/util/OpenIDConnect';
-import { AuthRequestHandler } from '../../../src/webapp/auth/AuthRequestHandler';
-import {
-  oidcProfiles
-} from '../OIDCProfiles';
 import { IdTokenClaims } from 'openid-client';
+import { AuthRequestHandler } from '../../../src/webapp/auth/AuthRequestHandler';
+import { OpenIDConnect } from '../../../src/webapp/util/OpenIDConnect';
+import {
+  oidcProfiles,
+} from '../OIDCProfiles';
 
 
 jest.spyOn(OpenIDConnect.prototype, 'authorize').mockImplementation(
@@ -19,7 +19,7 @@ jest.spyOn(OpenIDConnect.prototype, 'authorize').mockImplementation(
       email: 'test@example.com',
     };
     return claims;
-  }
+  },
 );
 
 beforeAll(() => {
@@ -52,7 +52,7 @@ function setupSessionResponse(loggedin: boolean) {
             S: JSON.stringify({
               'state-yivi': 'yivi',
               'state-digid': 'digid',
-            })
+            }),
           },
         },
       },
@@ -163,13 +163,13 @@ test('Successful auth creates new session (with post-login hook)', async () => {
   const sessionData = ddbMock.calls()[1].lastArg.input.Item.data.M;
   expect(sessionData.claims).toBeDefined();
   expect(sessionData.loggedin).toMatchObject({
-    "BOOL": false
+    BOOL: false,
   });
   expect(sessionData.status).toMatchObject({
-    "S": 'pre-login'
+    S: 'pre-login',
   });
   expect(sessionData.profileUsed).toMatchObject({
-    "S": 'yivi'
+    S: 'yivi',
   });
 });
 

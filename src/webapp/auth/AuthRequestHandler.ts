@@ -71,16 +71,16 @@ export class AuthRequestHandler {
             claims: { S: JSON.stringify(claims) },
             profileUsed: { S: profile.name },
           });
-        } catch (error: any) {
-          console.error(error.message);
+        } catch (error) {
+          console.error((error as any).message);
           return Response.error(500);
         }
 
       } else {
         return Response.redirect('/login');
       }
-    } catch (error: any) {
-      console.error(error.message);
+    } catch (error) {
+      console.error((error as any).message);
       return Response.redirect('/login');
     }
 

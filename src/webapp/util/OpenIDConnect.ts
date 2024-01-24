@@ -119,8 +119,9 @@ export class OpenIDConnect {
     let tokenSet;
     try {
       tokenSet = await client.callback(redirect_uri.toString(), params, { state: returnedState });
-    } catch (err: any) {
-      throw new Error(`${err.error} ${err.error_description}`);
+    } catch (err) {
+      const error = (err as any);
+      throw new Error(`${error.error} ${error.error_description}`);
     }
     const claims = tokenSet.claims();
     if (claims.aud != this.options.clientId) {

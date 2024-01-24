@@ -1,4 +1,4 @@
-import {render } from '../../../src/webapp/util/render';
+import { render } from '../../../src/webapp/util/render';
 
 test('render default templates', async () => {
   const html = await render({
@@ -7,4 +7,4 @@ test('render default templates', async () => {
   expect(html).toContain('<!doctype html>');
   expect(html).toContain('<span>hello world</span>');
   expect(html).toContain('</html>');
-})
+});

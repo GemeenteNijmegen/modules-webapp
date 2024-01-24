@@ -8,15 +8,15 @@ import { Construct } from 'constructs';
 type T = Lambda.Function;
 
 export interface WebpageProps {
-  apiFunction: {new(scope: Construct, id:string, props?: Lambda.FunctionProps): T };
-  description: string;
-  environment?: {[key: string]: string};
-  role?: IRole;
+  readonly apiFunction: any; // Type hack cast later to {new(scope: Construct, id:string, props?: Lambda.FunctionProps): T }
+  readonly description: string;
+  readonly environment?: {[key: string]: string};
+  readonly role?: IRole;
   /**
    * Set a lambda timeout in miliseconds
    * @default 3000 (ms)
    */
-  timeout?: Duration;
+  readonly timeout?: Duration;
 }
 
 export class Webpage extends Construct {
@@ -28,7 +28,8 @@ export class Webpage extends Construct {
     // See https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Lambda-Insights-extension-versionsx86-64.html
     const insightsArn = `arn:aws:lambda:${Stack.of(this).region}:580247275435:layer:LambdaInsightsExtension:21`;
 
-    this.lambda = new props.apiFunction(this, 'lambda', {
+    const apiFunction = props.apiFunction as {new(fScope: Construct, fId:string, fProps?: Lambda.FunctionProps): T };
+    this.lambda = new apiFunction(this, 'lambda', {
       runtime: Lambda.Runtime.NODEJS_18_X, // Required but overwritten
       handler: 'index.handler', // Required but overwritten
       code: Lambda.Code.fromInline('empty'), // required but overwritten
@@ -66,7 +67,7 @@ export class Webpage extends Construct {
    * Add session env variable.
    * @param minutes
    */
-  setSessionLifetime(minutes: number) {
+  overwriteSessionLifetime(minutes: number) {
     this.lambda.addEnvironment('SESSION_TTL_MIN', minutes.toString());
   }
 

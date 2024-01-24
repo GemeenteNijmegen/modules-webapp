@@ -4,10 +4,10 @@ import { DynamoDBClient, GetItemCommandOutput, GetItemCommand } from '@aws-sdk/c
 import { mockClient } from 'aws-sdk-client-mock';
 import { LoginRequestHandler } from '../../../src/webapp/login/loginRequestHandler';
 import {
-  yiviProfile, 
-  digiDProfile, 
+  yiviProfile,
+  digiDProfile,
   immediateRedirectProfile,
-  oidcProfiles
+  oidcProfiles,
 } from '../OIDCProfiles';
 
 const ddbMock = mockClient(DynamoDBClient);
@@ -34,8 +34,8 @@ describe('Test login page and urls', () => {
   test('Return login page with correct link', async () => {
     const loginRequestHandler = new LoginRequestHandler({ oidcProfiles });
     const result = await loginRequestHandler.handleRequest('', dynamoDBClient);
-    expect(result.body).toMatch(`http://auth/broker/sp/oidc/authenticate`);
-    expect(result.body).toMatch(encodeURIComponent(`http://app/auth`));
+    expect(result.body).toMatch('http://auth/broker/sp/oidc/authenticate');
+    expect(result.body).toMatch(encodeURIComponent('http://app/auth'));
     expect(result.body).toMatch(encodeURIComponent('idp_scoping:digid'));
     expect(result.statusCode).toBe(200);
   });
@@ -67,14 +67,13 @@ describe('Test login page and urls', () => {
   });
 
 
-
   test('Do not return login page in immidate redirect', async () => {
-    const loginRequestHandler = new LoginRequestHandler({ 
+    const loginRequestHandler = new LoginRequestHandler({
       oidcProfiles: [
-        yiviProfile, 
-        digiDProfile, 
-        immediateRedirectProfile
-      ], 
+        yiviProfile,
+        digiDProfile,
+        immediateRedirectProfile,
+      ],
     });
     const result = await loginRequestHandler.handleRequest('', dynamoDBClient);
     expect(result.statusCode).toBe(302);

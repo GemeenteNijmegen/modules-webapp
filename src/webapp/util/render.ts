@@ -1,4 +1,4 @@
-import Mustache from 'mustache';
+import * as Mustache from 'mustache';
 import { Files } from './Files';
 import * as footer from './footer.mustache';
 import * as header from './header.mustache';

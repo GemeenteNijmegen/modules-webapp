@@ -1,8 +1,10 @@
 import * as fs from 'fs';
-import * as apigatewayv2 from '@aws-cdk/aws-apigatewayv2-alpha';
-import { HttpMethod } from '@aws-cdk/aws-apigatewayv2-alpha';
-import { HttpLambdaIntegration } from '@aws-cdk/aws-apigatewayv2-integrations-alpha';
-import { aws_lambda as lambda } from 'aws-cdk-lib';
+import {
+  aws_lambda as lambda,
+  aws_apigatewayv2 as apigatewayv2,
+} from 'aws-cdk-lib';
+import { HttpMethod } from 'aws-cdk-lib/aws-apigatewayv2';
+import { HttpLambdaIntegration } from 'aws-cdk-lib/aws-apigatewayv2-integrations';
 import { Table } from 'aws-cdk-lib/aws-dynamodb';
 import { ManagedPolicy, Role, ServicePrincipal } from 'aws-cdk-lib/aws-iam';
 import { LayerVersion } from 'aws-cdk-lib/aws-lambda';
@@ -126,7 +128,7 @@ export class Api extends Construct {
     handler.allowSessionAccess(this.sessionsTable);
     if (this.customLambdaLayer) { handler.addLambdaLayer(this.customLambdaLayer); }
     handler.addLambdaLayer(this.configurationLambdaLayer);
-    handler.setSessionLifetime(this.props.webappOptions.sessionLifetime ?? 15);
+    handler.overwriteSessionLifetime(this.props.webappOptions.sessionLifetime ?? 15);
     handler.monitor(this.props.webappOptions.applicationName);
     handler.addStandardEnvironment(this.props.webappOptions.applicationName);
     this.api.addRoutes({

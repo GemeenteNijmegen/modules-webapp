@@ -1,4 +1,4 @@
-import { OpenIdConnectConnectionProfile } from "../../src/webapp/OIDCConnectionProfile";
+import { OpenIdConnectConnectionProfile } from '../../src/webapp/OIDCConnectionProfile';
 
 const baseProfile = {
   applicationBaseUrl: 'http://app',
@@ -6,7 +6,7 @@ const baseProfile = {
   clientId: '123',
   clientSecretArn: '123',
   immediateRedirect: false,
-}
+};
 
 export const yiviProfile: OpenIdConnectConnectionProfile = {
   ...baseProfile,
@@ -14,7 +14,7 @@ export const yiviProfile: OpenIdConnectConnectionProfile = {
   name: 'yivi',
   scope: 'openid idp_scoping:yivi irma-demo.gemeente.personalData.bsn',
   title: 'Yivi-title',
-}
+};
 
 export const digiDProfile: OpenIdConnectConnectionProfile = {
   ...baseProfile,
@@ -22,7 +22,7 @@ export const digiDProfile: OpenIdConnectConnectionProfile = {
   name: 'digid',
   scope: 'openid idp_scoping:digid service:DigiD_Midden',
   title: 'DigiD-title',
-}
+};
 
 export const immediateRedirectProfile: OpenIdConnectConnectionProfile = {
   ...baseProfile,
@@ -32,6 +32,6 @@ export const immediateRedirectProfile: OpenIdConnectConnectionProfile = {
   title: 'DigiD',
   authenticationBaseUrl: 'http://example.com',
   immediateRedirect: true,
-}
+};
 
 export const oidcProfiles = [yiviProfile, digiDProfile];

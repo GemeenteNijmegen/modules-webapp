@@ -41,6 +41,75 @@
       ],
       "condition": "! git log --oneline -1 | grep -q \"chore(release):\""
     },
+    "bundle": {
+      "name": "bundle",
+      "description": "Prepare assets",
+      "steps": [
+        {
+          "spawn": "bundle:webapp/auth/auth.lambda"
+        },
+        {
+          "spawn": "bundle:webapp/login/login.lambda"
+        },
+        {
+          "spawn": "bundle:webapp/logout/logout.lambda"
+        }
+      ]
+    },
+    "bundle:webapp/auth/auth.lambda": {
+      "name": "bundle:webapp/auth/auth.lambda",
+      "description": "Create a JavaScript bundle from src/webapp/auth/auth.lambda.ts",
+      "steps": [
+        {
+          "exec": "esbuild --bundle src/webapp/auth/auth.lambda.ts --target=\"node18\" --platform=\"node\" --outfile=\"assets/webapp/auth/auth.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/* --loader:.mustache=text"
+        }
+      ]
+    },
+    "bundle:webapp/auth/auth.lambda:watch": {
+      "name": "bundle:webapp/auth/auth.lambda:watch",
+      "description": "Continuously update the JavaScript bundle from src/webapp/auth/auth.lambda.ts",
+      "steps": [
+        {
+          "exec": "esbuild --bundle src/webapp/auth/auth.lambda.ts --target=\"node18\" --platform=\"node\" --outfile=\"assets/webapp/auth/auth.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/* --loader:.mustache=text --watch"
+        }
+      ]
+    },
+    "bundle:webapp/login/login.lambda": {
+      "name": "bundle:webapp/login/login.lambda",
+      "description": "Create a JavaScript bundle from src/webapp/login/login.lambda.ts",
+      "steps": [
+        {
+          "exec": "esbuild --bundle src/webapp/login/login.lambda.ts --target=\"node18\" --platform=\"node\" --outfile=\"assets/webapp/login/login.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/* --loader:.mustache=text"
+        }
+      ]
+    },
+    "bundle:webapp/login/login.lambda:watch": {
+      "name": "bundle:webapp/login/login.lambda:watch",
+      "description": "Continuously update the JavaScript bundle from src/webapp/login/login.lambda.ts",
+      "steps": [
+        {
+          "exec": "esbuild --bundle src/webapp/login/login.lambda.ts --target=\"node18\" --platform=\"node\" --outfile=\"assets/webapp/login/login.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/* --loader:.mustache=text --watch"
+        }
+      ]
+    },
+    "bundle:webapp/logout/logout.lambda": {
+      "name": "bundle:webapp/logout/logout.lambda",
+      "description": "Create a JavaScript bundle from src/webapp/logout/logout.lambda.ts",
+      "steps": [
+        {
+          "exec": "esbuild --bundle src/webapp/logout/logout.lambda.ts --target=\"node18\" --platform=\"node\" --outfile=\"assets/webapp/logout/logout.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/* --loader:.mustache=text"
+        }
+      ]
+    },
+    "bundle:webapp/logout/logout.lambda:watch": {
+      "name": "bundle:webapp/logout/logout.lambda:watch",
+      "description": "Continuously update the JavaScript bundle from src/webapp/logout/logout.lambda.ts",
+      "steps": [
+        {
+          "exec": "esbuild --bundle src/webapp/logout/logout.lambda.ts --target=\"node18\" --platform=\"node\" --outfile=\"assets/webapp/logout/logout.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/* --loader:.mustache=text --watch"
+        }
+      ]
+    },
     "clobber": {
       "name": "clobber",
       "description": "hard resets to HEAD of origin and cleans the local repo",
@@ -191,7 +260,12 @@
     },
     "pre-compile": {
       "name": "pre-compile",
-      "description": "Prepare the project for compilation"
+      "description": "Prepare the project for compilation",
+      "steps": [
+        {
+          "spawn": "bundle"
+        }
+      ]
     },
     "release": {
       "name": "release",
@@ -264,13 +338,13 @@
       },
       "steps": [
         {
-          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@gemeentenijmegen/projen-project-type,@types/jest,@types/node,@typescript-eslint/eslint-plugin,@typescript-eslint/parser,eslint-import-resolver-typescript,eslint-plugin-import,eslint,jest-junit,jest,jsii-diff,jsii-docgen,jsii-pacmak,projen,standard-version,ts-jest,typescript,aws-cdk-lib,constructs"
+          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@aws-sdk/types,@axe-core/playwright,@gemeentenijmegen/projen-project-type,@glen/jest-raw-loader,@playwright/test,@types/aws-lambda,@types/jest,@types/mustache,@types/node,@typescript-eslint/eslint-plugin,@typescript-eslint/parser,aws-sdk-client-mock,axios-mock-adapter,copyfiles,esbuild,eslint-import-resolver-typescript,eslint-plugin-import,eslint,jest-junit,jest,jsii-diff,jsii-docgen,jsii-pacmak,projen,standard-version,ts-jest,typescript,@aws-lambda-powertools/logger,@aws-sdk/client-dynamodb,@aws-sdk/client-secrets-manager,@aws-solutions-constructs/aws-lambda-dynamodb,@gemeentenijmegen/apiclient,@gemeentenijmegen/apigateway-http,@gemeentenijmegen/session,@gemeentenijmegen/utils,axios,cdk-remote-stack,cookie,dotenv,mustache,openid-client,aws-cdk-lib,constructs,@gemeentenijmegen/aws-constructs"
         },
         {
           "exec": "yarn install --check-files"
         },
         {
-          "exec": "yarn upgrade @gemeentenijmegen/projen-project-type @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-import-resolver-typescript eslint-plugin-import eslint jest-junit jest jsii-diff jsii-docgen jsii-pacmak projen standard-version ts-jest typescript aws-cdk-lib constructs"
+          "exec": "yarn upgrade @aws-sdk/types @axe-core/playwright @gemeentenijmegen/projen-project-type @glen/jest-raw-loader @playwright/test @types/aws-lambda @types/jest @types/mustache @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser aws-sdk-client-mock axios-mock-adapter copyfiles esbuild eslint-import-resolver-typescript eslint-plugin-import eslint jest-junit jest jsii-diff jsii-docgen jsii-pacmak projen standard-version ts-jest typescript @aws-lambda-powertools/logger @aws-sdk/client-dynamodb @aws-sdk/client-secrets-manager @aws-solutions-constructs/aws-lambda-dynamodb @gemeentenijmegen/apiclient @gemeentenijmegen/apigateway-http @gemeentenijmegen/session @gemeentenijmegen/utils axios cdk-remote-stack cookie dotenv mustache openid-client aws-cdk-lib constructs @gemeentenijmegen/aws-constructs"
         },
         {
           "exec": "npx projen"

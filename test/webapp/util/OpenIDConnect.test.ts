@@ -15,7 +15,7 @@ test('Incorrect state errors', async () => {
     applicationBaseUrl: 'http://localhost',
     authenticationBaseUrl: 'http://localhost',
     clientId: 'id',
-    clientSecretArn: 'arn:secret/bla'
+    clientSecretArn: 'arn:secret/bla',
   });
   expect.assertions(1); // Otherwise, if the catch claused is missed, the test would succeed
   try {

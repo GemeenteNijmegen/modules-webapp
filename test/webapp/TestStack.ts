@@ -1,11 +1,11 @@
 import { Stack } from 'aws-cdk-lib';
 import { Certificate } from 'aws-cdk-lib/aws-certificatemanager';
+import { Function, FunctionProps } from 'aws-cdk-lib/aws-lambda';
 import { HostedZone } from 'aws-cdk-lib/aws-route53';
 import { Secret } from 'aws-cdk-lib/aws-secretsmanager';
 import { Construct } from 'constructs';
-import { Webapp } from '../../src/webapp/Webapp';
 import { OpenIdConnectConnectionProfile } from '../../src/webapp/OIDCConnectionProfile';
-import { Function, FunctionProps } from 'aws-cdk-lib/aws-lambda';
+import { Webapp } from '../../src/webapp/Webapp';
 import { Webpage } from '../../src/webapp/Webpage';
 
 export interface TestStackProps {
@@ -34,7 +34,7 @@ export class TestStack extends Stack {
       hostedZoneId: 'ABC',
       zoneName: props.domainName ?? 'text.example.com',
     });
-    
+
     /**
      * Create the webapp!
      */
@@ -43,8 +43,8 @@ export class TestStack extends Stack {
       cloudFrontCertificate: certificate,
       hostedZone: hostedZone,
       domainName: hostedZone.zoneName,
-      additionalSourceFilesDir: props.additionalSourceFilesDir ?? './src/resources',
-      staticResourcesDirectory: props.staticResourcesDirectory ?? './src/app/static-resources/',
+      additionalSourceFilesDir: props.additionalSourceFilesDir ?? './test/webapp/resources/overwrites',
+      staticResourcesDirectory: props.staticResourcesDirectory ?? './test/webapp/resources/statics',
       defaultPath: props.defaultPath ?? '/home',
       postLoginProcessor: props.postLoginProcessor,
       oidcProfiles: props.oidcProfiles,
@@ -57,7 +57,7 @@ export class TestStack extends Stack {
     clientSecret.grantRead(webapp);
 
     // Test if adding a page works
-    if(props.addHomePage){
+    if (props.addHomePage) {
       this.addHomePage(webapp);
     }
   }

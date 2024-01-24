@@ -1,6 +1,6 @@
 import { App } from 'aws-cdk-lib';
-import { TestStack } from './TestStack';
 import { Template } from 'aws-cdk-lib/assertions';
+import { TestStack } from './TestStack';
 
 const WEBAPP_NAME = 'test-webapp-1';
 
@@ -17,8 +17,8 @@ describe('Basic infrastructure of Webapp construct', () => {
         immediateRedirect: false,
         name: 'test',
         scope: 'openid idp_scoping:simulator',
-        title: 'Test'
-      }
+        title: 'Test',
+      },
     ],
     addHomePage: true,
     additionalSourceFilesDir: undefined, // TODO test packaging of custom lambda layer
@@ -37,26 +37,26 @@ describe('Basic infrastructure of Webapp construct', () => {
 
   const loginLambda = findFirst(template.findResources('AWS::Lambda::Function', {
     Properties: {
-      Description: `Login page for webapp ${WEBAPP_NAME}.`
-    }
+      Description: `Login page for webapp ${WEBAPP_NAME}.`,
+    },
   }));
 
   const logoutLambda = findFirst(template.findResources('AWS::Lambda::Function', {
     Properties: {
-      Description: `Logout page for webapp ${WEBAPP_NAME}.`
-    }
+      Description: `Logout page for webapp ${WEBAPP_NAME}.`,
+    },
   }));
 
   const authLambda = findFirst(template.findResources('AWS::Lambda::Function', {
     Properties: {
-      Description: `Auth landingpoint for webapp ${WEBAPP_NAME}.`
-    }
+      Description: `Auth landingpoint for webapp ${WEBAPP_NAME}.`,
+    },
   }));
 
   const homeLambda = findFirst(template.findResources('AWS::Lambda::Function', {
     Properties: {
-      Description: 'Home lambda'
-    }
+      Description: 'Home lambda',
+    },
   }));
 
   const lambdaLayers = template.findResources('AWS::Lambda::LayerVersion');
@@ -88,7 +88,7 @@ describe('Basic infrastructure of Webapp construct', () => {
 
   test('CloudFront configuration', () => {
     const cloudfront = findFirst(template.findResources('AWS::CloudFront::Distribution'));
-    const config = cloudfront.Properties.DistributionConfig
+    const config = cloudfront.Properties.DistributionConfig;
     expect(config.DefaultRootObject).toBe('customdefaultpath');
     expect(config.Logging).toBeDefined();
     expect(config.Origins).toHaveLength(2);
@@ -113,35 +113,35 @@ describe('Basic infrastructure of Webapp construct', () => {
     checkApiRoute('/post-login', false);
   });
 
-  function checkApiRoute(path: string, shouldBeDefined: boolean = true){
+  function checkApiRoute(path: string, shouldBeDefined: boolean = true) {
     const route = findFirst(template.findResources('AWS::ApiGatewayV2::Route', {
       Properties: {
-        "RouteKey": `GET ${path}`,
-      }
+        RouteKey: `GET ${path}`,
+      },
     }));
-    if(shouldBeDefined){
+    if (shouldBeDefined) {
       expect(route).toBeDefined();
     } else {
       expect(route).not.toBeDefined();
     }
   }
 
-  function testLambdaResourceConfiguration(lambda: any){
+  function testLambdaResourceConfiguration(lambda: any) {
     expect(lambda).toBeDefined();
     expect(lambda.Properties.Environment.Variables).toMatchObject({
-      "SESSION_TABLE": {}, // Test if session table is injected.
-      "SESSION_TTL_MIN": "42", // Test if ttl is passed from configuration.
-      "WEBAPP_NAME": WEBAPP_NAME // Test if name is passed from configuration.
+      SESSION_TABLE: {}, // Test if session table is injected.
+      SESSION_TTL_MIN: '42', // Test if ttl is passed from configuration.
+      WEBAPP_NAME: WEBAPP_NAME, // Test if name is passed from configuration.
     });
     expect(lambda.Properties.Layers).toContainEqual({
-      "Ref": nameCustomLambdaLayer
+      Ref: nameCustomLambdaLayer,
     });
     expect(lambda.Properties.Layers).toContainEqual({
-      "Ref": nameConfigurationLambdaLayer
+      Ref: nameConfigurationLambdaLayer,
     });
   }
 
-})
+});
 
 function findFirst(obj: any) {
   try {
