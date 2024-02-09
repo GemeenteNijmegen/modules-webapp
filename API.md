@@ -2,41 +2,41 @@
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
 
-### Webapp <a name="Webapp" id="modules-webapp.Webapp"></a>
+### Webapp <a name="Webapp" id="@gemeentenijmegen/webapp.Webapp"></a>
 
 - *Implements:* aws-cdk-lib.aws_iam.IGrantable
 
-#### Initializers <a name="Initializers" id="modules-webapp.Webapp.Initializer"></a>
+#### Initializers <a name="Initializers" id="@gemeentenijmegen/webapp.Webapp.Initializer"></a>
 
 ```typescript
-import { Webapp } from 'modules-webapp'
+import { Webapp } from '@gemeentenijmegen/webapp'
 
 new Webapp(scope: Construct, id: string, props: WebappOptions)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#modules-webapp.Webapp.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#modules-webapp.Webapp.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#modules-webapp.Webapp.Initializer.parameter.props">props</a></code> | <code><a href="#modules-webapp.WebappOptions">WebappOptions</a></code> | *No description.* |
+| <code><a href="#@gemeentenijmegen/webapp.Webapp.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#@gemeentenijmegen/webapp.Webapp.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@gemeentenijmegen/webapp.Webapp.Initializer.parameter.props">props</a></code> | <code><a href="#@gemeentenijmegen/webapp.WebappOptions">WebappOptions</a></code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="modules-webapp.Webapp.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="@gemeentenijmegen/webapp.Webapp.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="modules-webapp.Webapp.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="@gemeentenijmegen/webapp.Webapp.Initializer.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="modules-webapp.Webapp.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="@gemeentenijmegen/webapp.Webapp.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#modules-webapp.WebappOptions">WebappOptions</a>
+- *Type:* <a href="#@gemeentenijmegen/webapp.WebappOptions">WebappOptions</a>
 
 ---
 
@@ -44,12 +44,12 @@ new Webapp(scope: Construct, id: string, props: WebappOptions)
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#modules-webapp.Webapp.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#modules-webapp.Webapp.addPage">addPage</a></code> | Add another page to the webapp. |
+| <code><a href="#@gemeentenijmegen/webapp.Webapp.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@gemeentenijmegen/webapp.Webapp.addPage">addPage</a></code> | Add another page to the webapp. |
 
 ---
 
-##### `toString` <a name="toString" id="modules-webapp.Webapp.toString"></a>
+##### `toString` <a name="toString" id="@gemeentenijmegen/webapp.Webapp.toString"></a>
 
 ```typescript
 public toString(): string
@@ -57,7 +57,7 @@ public toString(): string
 
 Returns a string representation of this construct.
 
-##### `addPage` <a name="addPage" id="modules-webapp.Webapp.addPage"></a>
+##### `addPage` <a name="addPage" id="@gemeentenijmegen/webapp.Webapp.addPage"></a>
 
 ```typescript
 public addPage(id: string, handler: Webpage, path: string, methods?: HttpMethod[]): void
@@ -65,25 +65,25 @@ public addPage(id: string, handler: Webpage, path: string, methods?: HttpMethod[
 
 Add another page to the webapp.
 
-###### `id`<sup>Required</sup> <a name="id" id="modules-webapp.Webapp.addPage.parameter.id"></a>
+###### `id`<sup>Required</sup> <a name="id" id="@gemeentenijmegen/webapp.Webapp.addPage.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-###### `handler`<sup>Required</sup> <a name="handler" id="modules-webapp.Webapp.addPage.parameter.handler"></a>
+###### `handler`<sup>Required</sup> <a name="handler" id="@gemeentenijmegen/webapp.Webapp.addPage.parameter.handler"></a>
 
-- *Type:* <a href="#modules-webapp.Webpage">Webpage</a>
+- *Type:* <a href="#@gemeentenijmegen/webapp.Webpage">Webpage</a>
 
 ---
 
-###### `path`<sup>Required</sup> <a name="path" id="modules-webapp.Webapp.addPage.parameter.path"></a>
+###### `path`<sup>Required</sup> <a name="path" id="@gemeentenijmegen/webapp.Webapp.addPage.parameter.path"></a>
 
 - *Type:* string
 
 ---
 
-###### `methods`<sup>Optional</sup> <a name="methods" id="modules-webapp.Webapp.addPage.parameter.methods"></a>
+###### `methods`<sup>Optional</sup> <a name="methods" id="@gemeentenijmegen/webapp.Webapp.addPage.parameter.methods"></a>
 
 - *Type:* aws-cdk-lib.aws_apigatewayv2.HttpMethod[]
 
@@ -93,21 +93,21 @@ Add another page to the webapp.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#modules-webapp.Webapp.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@gemeentenijmegen/webapp.Webapp.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="modules-webapp.Webapp.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="@gemeentenijmegen/webapp.Webapp.isConstruct"></a>
 
 ```typescript
-import { Webapp } from 'modules-webapp'
+import { Webapp } from '@gemeentenijmegen/webapp'
 
 Webapp.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="modules-webapp.Webapp.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="@gemeentenijmegen/webapp.Webapp.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -119,12 +119,12 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#modules-webapp.Webapp.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#modules-webapp.Webapp.property.grantPrincipal">grantPrincipal</a></code> | <code>aws-cdk-lib.aws_iam.IPrincipal</code> | The principal to grant permissions to. |
+| <code><a href="#@gemeentenijmegen/webapp.Webapp.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@gemeentenijmegen/webapp.Webapp.property.grantPrincipal">grantPrincipal</a></code> | <code>aws-cdk-lib.aws_iam.IPrincipal</code> | The principal to grant permissions to. |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="modules-webapp.Webapp.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="@gemeentenijmegen/webapp.Webapp.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -136,7 +136,7 @@ The tree node.
 
 ---
 
-##### `grantPrincipal`<sup>Required</sup> <a name="grantPrincipal" id="modules-webapp.Webapp.property.grantPrincipal"></a>
+##### `grantPrincipal`<sup>Required</sup> <a name="grantPrincipal" id="@gemeentenijmegen/webapp.Webapp.property.grantPrincipal"></a>
 
 ```typescript
 public readonly grantPrincipal: IPrincipal;
@@ -149,39 +149,39 @@ The principal to grant permissions to.
 ---
 
 
-### Webpage <a name="Webpage" id="modules-webapp.Webpage"></a>
+### Webpage <a name="Webpage" id="@gemeentenijmegen/webapp.Webpage"></a>
 
-#### Initializers <a name="Initializers" id="modules-webapp.Webpage.Initializer"></a>
+#### Initializers <a name="Initializers" id="@gemeentenijmegen/webapp.Webpage.Initializer"></a>
 
 ```typescript
-import { Webpage } from 'modules-webapp'
+import { Webpage } from '@gemeentenijmegen/webapp'
 
 new Webpage(scope: Construct, id: string, props: WebpageProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#modules-webapp.Webpage.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#modules-webapp.Webpage.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#modules-webapp.Webpage.Initializer.parameter.props">props</a></code> | <code><a href="#modules-webapp.WebpageProps">WebpageProps</a></code> | *No description.* |
+| <code><a href="#@gemeentenijmegen/webapp.Webpage.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#@gemeentenijmegen/webapp.Webpage.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@gemeentenijmegen/webapp.Webpage.Initializer.parameter.props">props</a></code> | <code><a href="#@gemeentenijmegen/webapp.WebpageProps">WebpageProps</a></code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="modules-webapp.Webpage.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="@gemeentenijmegen/webapp.Webpage.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="modules-webapp.Webpage.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="@gemeentenijmegen/webapp.Webpage.Initializer.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="modules-webapp.Webpage.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="@gemeentenijmegen/webapp.Webpage.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#modules-webapp.WebpageProps">WebpageProps</a>
+- *Type:* <a href="#@gemeentenijmegen/webapp.WebpageProps">WebpageProps</a>
 
 ---
 
@@ -189,16 +189,16 @@ new Webpage(scope: Construct, id: string, props: WebpageProps)
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#modules-webapp.Webpage.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#modules-webapp.Webpage.addLambdaLayer">addLambdaLayer</a></code> | Add the shared resources layer that is constructed for this webapp. |
-| <code><a href="#modules-webapp.Webpage.addStandardEnvironment">addStandardEnvironment</a></code> | Add standard environment variables to the lambda. |
-| <code><a href="#modules-webapp.Webpage.allowSessionAccess">allowSessionAccess</a></code> | Grant access to the session store and add SESSION_TABLE environment variable. |
-| <code><a href="#modules-webapp.Webpage.monitor">monitor</a></code> | Monitor the logs generated by this function for a filter pattern, generate metric and alarm on increased error rate. |
-| <code><a href="#modules-webapp.Webpage.overwriteSessionLifetime">overwriteSessionLifetime</a></code> | Add session env variable. |
+| <code><a href="#@gemeentenijmegen/webapp.Webpage.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@gemeentenijmegen/webapp.Webpage.addLambdaLayer">addLambdaLayer</a></code> | Add the shared resources layer that is constructed for this webapp. |
+| <code><a href="#@gemeentenijmegen/webapp.Webpage.addStandardEnvironment">addStandardEnvironment</a></code> | Add standard environment variables to the lambda. |
+| <code><a href="#@gemeentenijmegen/webapp.Webpage.allowSessionAccess">allowSessionAccess</a></code> | Grant access to the session store and add SESSION_TABLE environment variable. |
+| <code><a href="#@gemeentenijmegen/webapp.Webpage.monitor">monitor</a></code> | Monitor the logs generated by this function for a filter pattern, generate metric and alarm on increased error rate. |
+| <code><a href="#@gemeentenijmegen/webapp.Webpage.overwriteSessionLifetime">overwriteSessionLifetime</a></code> | Add session env variable. |
 
 ---
 
-##### `toString` <a name="toString" id="modules-webapp.Webpage.toString"></a>
+##### `toString` <a name="toString" id="@gemeentenijmegen/webapp.Webpage.toString"></a>
 
 ```typescript
 public toString(): string
@@ -206,7 +206,7 @@ public toString(): string
 
 Returns a string representation of this construct.
 
-##### `addLambdaLayer` <a name="addLambdaLayer" id="modules-webapp.Webpage.addLambdaLayer"></a>
+##### `addLambdaLayer` <a name="addLambdaLayer" id="@gemeentenijmegen/webapp.Webpage.addLambdaLayer"></a>
 
 ```typescript
 public addLambdaLayer(layer: LayerVersion): void
@@ -214,13 +214,13 @@ public addLambdaLayer(layer: LayerVersion): void
 
 Add the shared resources layer that is constructed for this webapp.
 
-###### `layer`<sup>Required</sup> <a name="layer" id="modules-webapp.Webpage.addLambdaLayer.parameter.layer"></a>
+###### `layer`<sup>Required</sup> <a name="layer" id="@gemeentenijmegen/webapp.Webpage.addLambdaLayer.parameter.layer"></a>
 
 - *Type:* aws-cdk-lib.aws_lambda.LayerVersion
 
 ---
 
-##### `addStandardEnvironment` <a name="addStandardEnvironment" id="modules-webapp.Webpage.addStandardEnvironment"></a>
+##### `addStandardEnvironment` <a name="addStandardEnvironment" id="@gemeentenijmegen/webapp.Webpage.addStandardEnvironment"></a>
 
 ```typescript
 public addStandardEnvironment(applicationName: string): void
@@ -228,13 +228,13 @@ public addStandardEnvironment(applicationName: string): void
 
 Add standard environment variables to the lambda.
 
-###### `applicationName`<sup>Required</sup> <a name="applicationName" id="modules-webapp.Webpage.addStandardEnvironment.parameter.applicationName"></a>
+###### `applicationName`<sup>Required</sup> <a name="applicationName" id="@gemeentenijmegen/webapp.Webpage.addStandardEnvironment.parameter.applicationName"></a>
 
 - *Type:* string
 
 ---
 
-##### `allowSessionAccess` <a name="allowSessionAccess" id="modules-webapp.Webpage.allowSessionAccess"></a>
+##### `allowSessionAccess` <a name="allowSessionAccess" id="@gemeentenijmegen/webapp.Webpage.allowSessionAccess"></a>
 
 ```typescript
 public allowSessionAccess(table: ITable): void
@@ -242,13 +242,13 @@ public allowSessionAccess(table: ITable): void
 
 Grant access to the session store and add SESSION_TABLE environment variable.
 
-###### `table`<sup>Required</sup> <a name="table" id="modules-webapp.Webpage.allowSessionAccess.parameter.table"></a>
+###### `table`<sup>Required</sup> <a name="table" id="@gemeentenijmegen/webapp.Webpage.allowSessionAccess.parameter.table"></a>
 
 - *Type:* aws-cdk-lib.aws_dynamodb.ITable
 
 ---
 
-##### `monitor` <a name="monitor" id="modules-webapp.Webpage.monitor"></a>
+##### `monitor` <a name="monitor" id="@gemeentenijmegen/webapp.Webpage.monitor"></a>
 
 ```typescript
 public monitor(applicationName: string, filterPattern?: IFilterPattern): void
@@ -256,13 +256,13 @@ public monitor(applicationName: string, filterPattern?: IFilterPattern): void
 
 Monitor the logs generated by this function for a filter pattern, generate metric and alarm on increased error rate.
 
-###### `applicationName`<sup>Required</sup> <a name="applicationName" id="modules-webapp.Webpage.monitor.parameter.applicationName"></a>
+###### `applicationName`<sup>Required</sup> <a name="applicationName" id="@gemeentenijmegen/webapp.Webpage.monitor.parameter.applicationName"></a>
 
 - *Type:* string
 
 ---
 
-###### `filterPattern`<sup>Optional</sup> <a name="filterPattern" id="modules-webapp.Webpage.monitor.parameter.filterPattern"></a>
+###### `filterPattern`<sup>Optional</sup> <a name="filterPattern" id="@gemeentenijmegen/webapp.Webpage.monitor.parameter.filterPattern"></a>
 
 - *Type:* aws-cdk-lib.aws_logs.IFilterPattern
 
@@ -270,7 +270,7 @@ Pattern to filter by (default: containing ERROR).
 
 ---
 
-##### `overwriteSessionLifetime` <a name="overwriteSessionLifetime" id="modules-webapp.Webpage.overwriteSessionLifetime"></a>
+##### `overwriteSessionLifetime` <a name="overwriteSessionLifetime" id="@gemeentenijmegen/webapp.Webpage.overwriteSessionLifetime"></a>
 
 ```typescript
 public overwriteSessionLifetime(minutes: number): void
@@ -278,7 +278,7 @@ public overwriteSessionLifetime(minutes: number): void
 
 Add session env variable.
 
-###### `minutes`<sup>Required</sup> <a name="minutes" id="modules-webapp.Webpage.overwriteSessionLifetime.parameter.minutes"></a>
+###### `minutes`<sup>Required</sup> <a name="minutes" id="@gemeentenijmegen/webapp.Webpage.overwriteSessionLifetime.parameter.minutes"></a>
 
 - *Type:* number
 
@@ -288,21 +288,21 @@ Add session env variable.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#modules-webapp.Webpage.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@gemeentenijmegen/webapp.Webpage.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="modules-webapp.Webpage.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="@gemeentenijmegen/webapp.Webpage.isConstruct"></a>
 
 ```typescript
-import { Webpage } from 'modules-webapp'
+import { Webpage } from '@gemeentenijmegen/webapp'
 
 Webpage.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="modules-webapp.Webpage.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="@gemeentenijmegen/webapp.Webpage.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -314,12 +314,12 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#modules-webapp.Webpage.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#modules-webapp.Webpage.property.lambda">lambda</a></code> | <code>aws-cdk-lib.aws_lambda.Function</code> | *No description.* |
+| <code><a href="#@gemeentenijmegen/webapp.Webpage.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@gemeentenijmegen/webapp.Webpage.property.lambda">lambda</a></code> | <code>aws-cdk-lib.aws_lambda.Function</code> | *No description.* |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="modules-webapp.Webpage.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="@gemeentenijmegen/webapp.Webpage.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -331,7 +331,7 @@ The tree node.
 
 ---
 
-##### `lambda`<sup>Required</sup> <a name="lambda" id="modules-webapp.Webpage.property.lambda"></a>
+##### `lambda`<sup>Required</sup> <a name="lambda" id="@gemeentenijmegen/webapp.Webpage.property.lambda"></a>
 
 ```typescript
 public readonly lambda: Function;
@@ -344,12 +344,12 @@ public readonly lambda: Function;
 
 ## Structs <a name="Structs" id="Structs"></a>
 
-### OpenIdConnectConnectionProfile <a name="OpenIdConnectConnectionProfile" id="modules-webapp.OpenIdConnectConnectionProfile"></a>
+### OpenIdConnectConnectionProfile <a name="OpenIdConnectConnectionProfile" id="@gemeentenijmegen/webapp.OpenIdConnectConnectionProfile"></a>
 
-#### Initializer <a name="Initializer" id="modules-webapp.OpenIdConnectConnectionProfile.Initializer"></a>
+#### Initializer <a name="Initializer" id="@gemeentenijmegen/webapp.OpenIdConnectConnectionProfile.Initializer"></a>
 
 ```typescript
-import { OpenIdConnectConnectionProfile } from 'modules-webapp'
+import { OpenIdConnectConnectionProfile } from '@gemeentenijmegen/webapp'
 
 const openIdConnectConnectionProfile: OpenIdConnectConnectionProfile = { ... }
 ```
@@ -358,19 +358,19 @@ const openIdConnectConnectionProfile: OpenIdConnectConnectionProfile = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#modules-webapp.OpenIdConnectConnectionProfile.property.applicationBaseUrl">applicationBaseUrl</a></code> | <code>string</code> | The base URL of the application, used to build the redirect url. |
-| <code><a href="#modules-webapp.OpenIdConnectConnectionProfile.property.authenticationBaseUrl">authenticationBaseUrl</a></code> | <code>string</code> | The base URL of the authentication provider. |
-| <code><a href="#modules-webapp.OpenIdConnectConnectionProfile.property.clientId">clientId</a></code> | <code>string</code> | OIDC client ID. |
-| <code><a href="#modules-webapp.OpenIdConnectConnectionProfile.property.clientSecretArn">clientSecretArn</a></code> | <code>string</code> | OIDC client secret arn of the secretsmanager secret. |
-| <code><a href="#modules-webapp.OpenIdConnectConnectionProfile.property.cssClass">cssClass</a></code> | <code>string</code> | The CSS class appended to the rendered href. |
-| <code><a href="#modules-webapp.OpenIdConnectConnectionProfile.property.immediateRedirect">immediateRedirect</a></code> | <code>boolean</code> | Do not render the HTML page but redirect to this authentication provider immediately. |
-| <code><a href="#modules-webapp.OpenIdConnectConnectionProfile.property.name">name</a></code> | <code>string</code> | The name of this profile must be unique. |
-| <code><a href="#modules-webapp.OpenIdConnectConnectionProfile.property.scope">scope</a></code> | <code>string</code> | The scopes this profile requests and allows Scopes are separated using spaces. |
-| <code><a href="#modules-webapp.OpenIdConnectConnectionProfile.property.title">title</a></code> | <code>string</code> | The title to render for this proble. |
+| <code><a href="#@gemeentenijmegen/webapp.OpenIdConnectConnectionProfile.property.applicationBaseUrl">applicationBaseUrl</a></code> | <code>string</code> | The base URL of the application, used to build the redirect url. |
+| <code><a href="#@gemeentenijmegen/webapp.OpenIdConnectConnectionProfile.property.authenticationBaseUrl">authenticationBaseUrl</a></code> | <code>string</code> | The base URL of the authentication provider. |
+| <code><a href="#@gemeentenijmegen/webapp.OpenIdConnectConnectionProfile.property.clientId">clientId</a></code> | <code>string</code> | OIDC client ID. |
+| <code><a href="#@gemeentenijmegen/webapp.OpenIdConnectConnectionProfile.property.clientSecretArn">clientSecretArn</a></code> | <code>string</code> | OIDC client secret arn of the secretsmanager secret. |
+| <code><a href="#@gemeentenijmegen/webapp.OpenIdConnectConnectionProfile.property.cssClass">cssClass</a></code> | <code>string</code> | The CSS class appended to the rendered href. |
+| <code><a href="#@gemeentenijmegen/webapp.OpenIdConnectConnectionProfile.property.immediateRedirect">immediateRedirect</a></code> | <code>boolean</code> | Do not render the HTML page but redirect to this authentication provider immediately. |
+| <code><a href="#@gemeentenijmegen/webapp.OpenIdConnectConnectionProfile.property.name">name</a></code> | <code>string</code> | The name of this profile must be unique. |
+| <code><a href="#@gemeentenijmegen/webapp.OpenIdConnectConnectionProfile.property.scope">scope</a></code> | <code>string</code> | The scopes this profile requests and allows Scopes are separated using spaces. |
+| <code><a href="#@gemeentenijmegen/webapp.OpenIdConnectConnectionProfile.property.title">title</a></code> | <code>string</code> | The title to render for this proble. |
 
 ---
 
-##### `applicationBaseUrl`<sup>Required</sup> <a name="applicationBaseUrl" id="modules-webapp.OpenIdConnectConnectionProfile.property.applicationBaseUrl"></a>
+##### `applicationBaseUrl`<sup>Required</sup> <a name="applicationBaseUrl" id="@gemeentenijmegen/webapp.OpenIdConnectConnectionProfile.property.applicationBaseUrl"></a>
 
 ```typescript
 public readonly applicationBaseUrl: string;
@@ -382,7 +382,7 @@ The base URL of the application, used to build the redirect url.
 
 ---
 
-##### `authenticationBaseUrl`<sup>Required</sup> <a name="authenticationBaseUrl" id="modules-webapp.OpenIdConnectConnectionProfile.property.authenticationBaseUrl"></a>
+##### `authenticationBaseUrl`<sup>Required</sup> <a name="authenticationBaseUrl" id="@gemeentenijmegen/webapp.OpenIdConnectConnectionProfile.property.authenticationBaseUrl"></a>
 
 ```typescript
 public readonly authenticationBaseUrl: string;
@@ -394,7 +394,7 @@ The base URL of the authentication provider.
 
 ---
 
-##### `clientId`<sup>Required</sup> <a name="clientId" id="modules-webapp.OpenIdConnectConnectionProfile.property.clientId"></a>
+##### `clientId`<sup>Required</sup> <a name="clientId" id="@gemeentenijmegen/webapp.OpenIdConnectConnectionProfile.property.clientId"></a>
 
 ```typescript
 public readonly clientId: string;
@@ -406,7 +406,7 @@ OIDC client ID.
 
 ---
 
-##### `clientSecretArn`<sup>Required</sup> <a name="clientSecretArn" id="modules-webapp.OpenIdConnectConnectionProfile.property.clientSecretArn"></a>
+##### `clientSecretArn`<sup>Required</sup> <a name="clientSecretArn" id="@gemeentenijmegen/webapp.OpenIdConnectConnectionProfile.property.clientSecretArn"></a>
 
 ```typescript
 public readonly clientSecretArn: string;
@@ -418,7 +418,7 @@ OIDC client secret arn of the secretsmanager secret.
 
 ---
 
-##### `cssClass`<sup>Required</sup> <a name="cssClass" id="modules-webapp.OpenIdConnectConnectionProfile.property.cssClass"></a>
+##### `cssClass`<sup>Required</sup> <a name="cssClass" id="@gemeentenijmegen/webapp.OpenIdConnectConnectionProfile.property.cssClass"></a>
 
 ```typescript
 public readonly cssClass: string;
@@ -430,7 +430,7 @@ The CSS class appended to the rendered href.
 
 ---
 
-##### `immediateRedirect`<sup>Required</sup> <a name="immediateRedirect" id="modules-webapp.OpenIdConnectConnectionProfile.property.immediateRedirect"></a>
+##### `immediateRedirect`<sup>Required</sup> <a name="immediateRedirect" id="@gemeentenijmegen/webapp.OpenIdConnectConnectionProfile.property.immediateRedirect"></a>
 
 ```typescript
 public readonly immediateRedirect: boolean;
@@ -442,7 +442,7 @@ Do not render the HTML page but redirect to this authentication provider immedia
 
 ---
 
-##### `name`<sup>Required</sup> <a name="name" id="modules-webapp.OpenIdConnectConnectionProfile.property.name"></a>
+##### `name`<sup>Required</sup> <a name="name" id="@gemeentenijmegen/webapp.OpenIdConnectConnectionProfile.property.name"></a>
 
 ```typescript
 public readonly name: string;
@@ -454,7 +454,7 @@ The name of this profile must be unique.
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="modules-webapp.OpenIdConnectConnectionProfile.property.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="@gemeentenijmegen/webapp.OpenIdConnectConnectionProfile.property.scope"></a>
 
 ```typescript
 public readonly scope: string;
@@ -466,7 +466,7 @@ The scopes this profile requests and allows Scopes are separated using spaces.
 
 ---
 
-##### `title`<sup>Required</sup> <a name="title" id="modules-webapp.OpenIdConnectConnectionProfile.property.title"></a>
+##### `title`<sup>Required</sup> <a name="title" id="@gemeentenijmegen/webapp.OpenIdConnectConnectionProfile.property.title"></a>
 
 ```typescript
 public readonly title: string;
@@ -478,12 +478,12 @@ The title to render for this proble.
 
 ---
 
-### WebappConfigurable <a name="WebappConfigurable" id="modules-webapp.WebappConfigurable"></a>
+### WebappConfigurable <a name="WebappConfigurable" id="@gemeentenijmegen/webapp.WebappConfigurable"></a>
 
-#### Initializer <a name="Initializer" id="modules-webapp.WebappConfigurable.Initializer"></a>
+#### Initializer <a name="Initializer" id="@gemeentenijmegen/webapp.WebappConfigurable.Initializer"></a>
 
 ```typescript
-import { WebappConfigurable } from 'modules-webapp'
+import { WebappConfigurable } from '@gemeentenijmegen/webapp'
 
 const webappConfigurable: WebappConfigurable = { ... }
 ```
@@ -492,26 +492,26 @@ const webappConfigurable: WebappConfigurable = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#modules-webapp.WebappConfigurable.property.webappOptions">webappOptions</a></code> | <code><a href="#modules-webapp.WebappOptions">WebappOptions</a></code> | *No description.* |
+| <code><a href="#@gemeentenijmegen/webapp.WebappConfigurable.property.webappOptions">webappOptions</a></code> | <code><a href="#@gemeentenijmegen/webapp.WebappOptions">WebappOptions</a></code> | *No description.* |
 
 ---
 
-##### `webappOptions`<sup>Required</sup> <a name="webappOptions" id="modules-webapp.WebappConfigurable.property.webappOptions"></a>
+##### `webappOptions`<sup>Required</sup> <a name="webappOptions" id="@gemeentenijmegen/webapp.WebappConfigurable.property.webappOptions"></a>
 
 ```typescript
 public readonly webappOptions: WebappOptions;
 ```
 
-- *Type:* <a href="#modules-webapp.WebappOptions">WebappOptions</a>
+- *Type:* <a href="#@gemeentenijmegen/webapp.WebappOptions">WebappOptions</a>
 
 ---
 
-### WebappOptions <a name="WebappOptions" id="modules-webapp.WebappOptions"></a>
+### WebappOptions <a name="WebappOptions" id="@gemeentenijmegen/webapp.WebappOptions"></a>
 
-#### Initializer <a name="Initializer" id="modules-webapp.WebappOptions.Initializer"></a>
+#### Initializer <a name="Initializer" id="@gemeentenijmegen/webapp.WebappOptions.Initializer"></a>
 
 ```typescript
-import { WebappOptions } from 'modules-webapp'
+import { WebappOptions } from '@gemeentenijmegen/webapp'
 
 const webappOptions: WebappOptions = { ... }
 ```
@@ -520,22 +520,22 @@ const webappOptions: WebappOptions = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#modules-webapp.WebappOptions.property.additionalSourceFilesDir">additionalSourceFilesDir</a></code> | <code>string</code> | Relative path to a directroy that contains files that need to be packed into the lambda e.g. header.mustache, footer.mustache. |
-| <code><a href="#modules-webapp.WebappOptions.property.applicationName">applicationName</a></code> | <code>string</code> | The name of the application, can only contain alphanumeric and hypens. |
-| <code><a href="#modules-webapp.WebappOptions.property.cloudFrontCertificate">cloudFrontCertificate</a></code> | <code>aws-cdk-lib.aws_certificatemanager.ICertificate</code> | The certificate to use for the cloudfront distribution (should be in us-east-1). |
-| <code><a href="#modules-webapp.WebappOptions.property.defaultPath">defaultPath</a></code> | <code>string</code> | Default url path the user is send to. |
-| <code><a href="#modules-webapp.WebappOptions.property.domainName">domainName</a></code> | <code>string</code> | The domain name used by this webapp This is used for creating redirect urls in the lambdas. |
-| <code><a href="#modules-webapp.WebappOptions.property.hostedZone">hostedZone</a></code> | <code>aws-cdk-lib.aws_route53.IHostedZone</code> | The hosted zone in which to add A and AAAA records for the cloudfront distribution. |
-| <code><a href="#modules-webapp.WebappOptions.property.oidcProfiles">oidcProfiles</a></code> | <code><a href="#modules-webapp.OpenIdConnectConnectionProfile">OpenIdConnectConnectionProfile</a>[]</code> | OpenID Connect connection profiles. |
-| <code><a href="#modules-webapp.WebappOptions.property.staticResourcesDirectory">staticResourcesDirectory</a></code> | <code>string</code> | The directory with static resources that are made available through CloudFront under the /statics and /.well-knonw path. |
-| <code><a href="#modules-webapp.WebappOptions.property.alternativeDomainNames">alternativeDomainNames</a></code> | <code>string[]</code> | Optional alternative domain names Note: certificate provided must be valid for all alternative domain names! |
-| <code><a href="#modules-webapp.WebappOptions.property.cspHeaderValue">cspHeaderValue</a></code> | <code>string</code> | Overwrites the default CSP header value. |
-| <code><a href="#modules-webapp.WebappOptions.property.postLoginProcessor">postLoginProcessor</a></code> | <code><a href="#modules-webapp.Webpage">Webpage</a></code> | A own lambda to handle project specific logic for handling the login e.g. validating claims, updating the session. note: you are reponsible for redirecting the user to the home page after post login processing. |
-| <code><a href="#modules-webapp.WebappOptions.property.sessionLifetime">sessionLifetime</a></code> | <code>number</code> | Session lifetime in minutes. |
+| <code><a href="#@gemeentenijmegen/webapp.WebappOptions.property.additionalSourceFilesDir">additionalSourceFilesDir</a></code> | <code>string</code> | Relative path to a directroy that contains files that need to be packed into the lambda e.g. header.mustache, footer.mustache. |
+| <code><a href="#@gemeentenijmegen/webapp.WebappOptions.property.applicationName">applicationName</a></code> | <code>string</code> | The name of the application, can only contain alphanumeric and hypens. |
+| <code><a href="#@gemeentenijmegen/webapp.WebappOptions.property.cloudFrontCertificate">cloudFrontCertificate</a></code> | <code>aws-cdk-lib.aws_certificatemanager.ICertificate</code> | The certificate to use for the cloudfront distribution (should be in us-east-1). |
+| <code><a href="#@gemeentenijmegen/webapp.WebappOptions.property.defaultPath">defaultPath</a></code> | <code>string</code> | Default url path the user is send to. |
+| <code><a href="#@gemeentenijmegen/webapp.WebappOptions.property.domainName">domainName</a></code> | <code>string</code> | The domain name used by this webapp This is used for creating redirect urls in the lambdas. |
+| <code><a href="#@gemeentenijmegen/webapp.WebappOptions.property.hostedZone">hostedZone</a></code> | <code>aws-cdk-lib.aws_route53.IHostedZone</code> | The hosted zone in which to add A and AAAA records for the cloudfront distribution. |
+| <code><a href="#@gemeentenijmegen/webapp.WebappOptions.property.oidcProfiles">oidcProfiles</a></code> | <code><a href="#@gemeentenijmegen/webapp.OpenIdConnectConnectionProfile">OpenIdConnectConnectionProfile</a>[]</code> | OpenID Connect connection profiles. |
+| <code><a href="#@gemeentenijmegen/webapp.WebappOptions.property.staticResourcesDirectory">staticResourcesDirectory</a></code> | <code>string</code> | The directory with static resources that are made available through CloudFront under the /statics and /.well-knonw path. |
+| <code><a href="#@gemeentenijmegen/webapp.WebappOptions.property.alternativeDomainNames">alternativeDomainNames</a></code> | <code>string[]</code> | Optional alternative domain names Note: certificate provided must be valid for all alternative domain names! |
+| <code><a href="#@gemeentenijmegen/webapp.WebappOptions.property.cspHeaderValue">cspHeaderValue</a></code> | <code>string</code> | Overwrites the default CSP header value. |
+| <code><a href="#@gemeentenijmegen/webapp.WebappOptions.property.postLoginProcessor">postLoginProcessor</a></code> | <code><a href="#@gemeentenijmegen/webapp.Webpage">Webpage</a></code> | A own lambda to handle project specific logic for handling the login e.g. validating claims, updating the session. note: you are reponsible for redirecting the user to the home page after post login processing. |
+| <code><a href="#@gemeentenijmegen/webapp.WebappOptions.property.sessionLifetime">sessionLifetime</a></code> | <code>number</code> | Session lifetime in minutes. |
 
 ---
 
-##### `additionalSourceFilesDir`<sup>Required</sup> <a name="additionalSourceFilesDir" id="modules-webapp.WebappOptions.property.additionalSourceFilesDir"></a>
+##### `additionalSourceFilesDir`<sup>Required</sup> <a name="additionalSourceFilesDir" id="@gemeentenijmegen/webapp.WebappOptions.property.additionalSourceFilesDir"></a>
 
 ```typescript
 public readonly additionalSourceFilesDir: string;
@@ -547,7 +547,7 @@ Relative path to a directroy that contains files that need to be packed into the
 
 ---
 
-##### `applicationName`<sup>Required</sup> <a name="applicationName" id="modules-webapp.WebappOptions.property.applicationName"></a>
+##### `applicationName`<sup>Required</sup> <a name="applicationName" id="@gemeentenijmegen/webapp.WebappOptions.property.applicationName"></a>
 
 ```typescript
 public readonly applicationName: string;
@@ -559,7 +559,7 @@ The name of the application, can only contain alphanumeric and hypens.
 
 ---
 
-##### `cloudFrontCertificate`<sup>Required</sup> <a name="cloudFrontCertificate" id="modules-webapp.WebappOptions.property.cloudFrontCertificate"></a>
+##### `cloudFrontCertificate`<sup>Required</sup> <a name="cloudFrontCertificate" id="@gemeentenijmegen/webapp.WebappOptions.property.cloudFrontCertificate"></a>
 
 ```typescript
 public readonly cloudFrontCertificate: ICertificate;
@@ -571,7 +571,7 @@ The certificate to use for the cloudfront distribution (should be in us-east-1).
 
 ---
 
-##### `defaultPath`<sup>Required</sup> <a name="defaultPath" id="modules-webapp.WebappOptions.property.defaultPath"></a>
+##### `defaultPath`<sup>Required</sup> <a name="defaultPath" id="@gemeentenijmegen/webapp.WebappOptions.property.defaultPath"></a>
 
 ```typescript
 public readonly defaultPath: string;
@@ -585,7 +585,7 @@ Note: responsibility of creating the lambda lies by the user of this construct.
 
 ---
 
-##### `domainName`<sup>Required</sup> <a name="domainName" id="modules-webapp.WebappOptions.property.domainName"></a>
+##### `domainName`<sup>Required</sup> <a name="domainName" id="@gemeentenijmegen/webapp.WebappOptions.property.domainName"></a>
 
 ```typescript
 public readonly domainName: string;
@@ -597,7 +597,7 @@ The domain name used by this webapp This is used for creating redirect urls in t
 
 ---
 
-##### `hostedZone`<sup>Required</sup> <a name="hostedZone" id="modules-webapp.WebappOptions.property.hostedZone"></a>
+##### `hostedZone`<sup>Required</sup> <a name="hostedZone" id="@gemeentenijmegen/webapp.WebappOptions.property.hostedZone"></a>
 
 ```typescript
 public readonly hostedZone: IHostedZone;
@@ -609,19 +609,19 @@ The hosted zone in which to add A and AAAA records for the cloudfront distributi
 
 ---
 
-##### `oidcProfiles`<sup>Required</sup> <a name="oidcProfiles" id="modules-webapp.WebappOptions.property.oidcProfiles"></a>
+##### `oidcProfiles`<sup>Required</sup> <a name="oidcProfiles" id="@gemeentenijmegen/webapp.WebappOptions.property.oidcProfiles"></a>
 
 ```typescript
 public readonly oidcProfiles: OpenIdConnectConnectionProfile[];
 ```
 
-- *Type:* <a href="#modules-webapp.OpenIdConnectConnectionProfile">OpenIdConnectConnectionProfile</a>[]
+- *Type:* <a href="#@gemeentenijmegen/webapp.OpenIdConnectConnectionProfile">OpenIdConnectConnectionProfile</a>[]
 
 OpenID Connect connection profiles.
 
 ---
 
-##### `staticResourcesDirectory`<sup>Required</sup> <a name="staticResourcesDirectory" id="modules-webapp.WebappOptions.property.staticResourcesDirectory"></a>
+##### `staticResourcesDirectory`<sup>Required</sup> <a name="staticResourcesDirectory" id="@gemeentenijmegen/webapp.WebappOptions.property.staticResourcesDirectory"></a>
 
 ```typescript
 public readonly staticResourcesDirectory: string;
@@ -633,7 +633,7 @@ The directory with static resources that are made available through CloudFront u
 
 ---
 
-##### `alternativeDomainNames`<sup>Optional</sup> <a name="alternativeDomainNames" id="modules-webapp.WebappOptions.property.alternativeDomainNames"></a>
+##### `alternativeDomainNames`<sup>Optional</sup> <a name="alternativeDomainNames" id="@gemeentenijmegen/webapp.WebappOptions.property.alternativeDomainNames"></a>
 
 ```typescript
 public readonly alternativeDomainNames: string[];
@@ -645,7 +645,7 @@ Optional alternative domain names Note: certificate provided must be valid for a
 
 ---
 
-##### `cspHeaderValue`<sup>Optional</sup> <a name="cspHeaderValue" id="modules-webapp.WebappOptions.property.cspHeaderValue"></a>
+##### `cspHeaderValue`<sup>Optional</sup> <a name="cspHeaderValue" id="@gemeentenijmegen/webapp.WebappOptions.property.cspHeaderValue"></a>
 
 ```typescript
 public readonly cspHeaderValue: string;
@@ -657,20 +657,20 @@ Overwrites the default CSP header value.
 
 ---
 
-##### `postLoginProcessor`<sup>Optional</sup> <a name="postLoginProcessor" id="modules-webapp.WebappOptions.property.postLoginProcessor"></a>
+##### `postLoginProcessor`<sup>Optional</sup> <a name="postLoginProcessor" id="@gemeentenijmegen/webapp.WebappOptions.property.postLoginProcessor"></a>
 
 ```typescript
 public readonly postLoginProcessor: Webpage;
 ```
 
-- *Type:* <a href="#modules-webapp.Webpage">Webpage</a>
+- *Type:* <a href="#@gemeentenijmegen/webapp.Webpage">Webpage</a>
 - *Default:* none
 
 A own lambda to handle project specific logic for handling the login e.g. validating claims, updating the session. note: you are reponsible for redirecting the user to the home page after post login processing.
 
 ---
 
-##### `sessionLifetime`<sup>Optional</sup> <a name="sessionLifetime" id="modules-webapp.WebappOptions.property.sessionLifetime"></a>
+##### `sessionLifetime`<sup>Optional</sup> <a name="sessionLifetime" id="@gemeentenijmegen/webapp.WebappOptions.property.sessionLifetime"></a>
 
 ```typescript
 public readonly sessionLifetime: number;
@@ -683,12 +683,12 @@ Session lifetime in minutes.
 
 ---
 
-### WebpageProps <a name="WebpageProps" id="modules-webapp.WebpageProps"></a>
+### WebpageProps <a name="WebpageProps" id="@gemeentenijmegen/webapp.WebpageProps"></a>
 
-#### Initializer <a name="Initializer" id="modules-webapp.WebpageProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="@gemeentenijmegen/webapp.WebpageProps.Initializer"></a>
 
 ```typescript
-import { WebpageProps } from 'modules-webapp'
+import { WebpageProps } from '@gemeentenijmegen/webapp'
 
 const webpageProps: WebpageProps = { ... }
 ```
@@ -697,15 +697,15 @@ const webpageProps: WebpageProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#modules-webapp.WebpageProps.property.apiFunction">apiFunction</a></code> | <code>any</code> | *No description.* |
-| <code><a href="#modules-webapp.WebpageProps.property.description">description</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#modules-webapp.WebpageProps.property.environment">environment</a></code> | <code>{[ key: string ]: string}</code> | *No description.* |
-| <code><a href="#modules-webapp.WebpageProps.property.role">role</a></code> | <code>aws-cdk-lib.aws_iam.IRole</code> | *No description.* |
-| <code><a href="#modules-webapp.WebpageProps.property.timeout">timeout</a></code> | <code>aws-cdk-lib.Duration</code> | Set a lambda timeout in miliseconds. |
+| <code><a href="#@gemeentenijmegen/webapp.WebpageProps.property.apiFunction">apiFunction</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#@gemeentenijmegen/webapp.WebpageProps.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@gemeentenijmegen/webapp.WebpageProps.property.environment">environment</a></code> | <code>{[ key: string ]: string}</code> | *No description.* |
+| <code><a href="#@gemeentenijmegen/webapp.WebpageProps.property.role">role</a></code> | <code>aws-cdk-lib.aws_iam.IRole</code> | *No description.* |
+| <code><a href="#@gemeentenijmegen/webapp.WebpageProps.property.timeout">timeout</a></code> | <code>aws-cdk-lib.Duration</code> | Set a lambda timeout in miliseconds. |
 
 ---
 
-##### `apiFunction`<sup>Required</sup> <a name="apiFunction" id="modules-webapp.WebpageProps.property.apiFunction"></a>
+##### `apiFunction`<sup>Required</sup> <a name="apiFunction" id="@gemeentenijmegen/webapp.WebpageProps.property.apiFunction"></a>
 
 ```typescript
 public readonly apiFunction: any;
@@ -715,7 +715,7 @@ public readonly apiFunction: any;
 
 ---
 
-##### `description`<sup>Required</sup> <a name="description" id="modules-webapp.WebpageProps.property.description"></a>
+##### `description`<sup>Required</sup> <a name="description" id="@gemeentenijmegen/webapp.WebpageProps.property.description"></a>
 
 ```typescript
 public readonly description: string;
@@ -725,7 +725,7 @@ public readonly description: string;
 
 ---
 
-##### `environment`<sup>Optional</sup> <a name="environment" id="modules-webapp.WebpageProps.property.environment"></a>
+##### `environment`<sup>Optional</sup> <a name="environment" id="@gemeentenijmegen/webapp.WebpageProps.property.environment"></a>
 
 ```typescript
 public readonly environment: {[ key: string ]: string};
@@ -735,7 +735,7 @@ public readonly environment: {[ key: string ]: string};
 
 ---
 
-##### `role`<sup>Optional</sup> <a name="role" id="modules-webapp.WebpageProps.property.role"></a>
+##### `role`<sup>Optional</sup> <a name="role" id="@gemeentenijmegen/webapp.WebpageProps.property.role"></a>
 
 ```typescript
 public readonly role: IRole;
@@ -745,7 +745,7 @@ public readonly role: IRole;
 
 ---
 
-##### `timeout`<sup>Optional</sup> <a name="timeout" id="modules-webapp.WebpageProps.property.timeout"></a>
+##### `timeout`<sup>Optional</sup> <a name="timeout" id="@gemeentenijmegen/webapp.WebpageProps.property.timeout"></a>
 
 ```typescript
 public readonly timeout: Duration;

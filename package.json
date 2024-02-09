@@ -1,5 +1,5 @@
 {
-  "name": "modules-webapp",
+  "name": "@gemeentenijmegen/webapp",
   "repository": {
     "type": "git",
     "url": "https://github.com/GemeenteNijmegen"
@@ -118,6 +118,9 @@
   ],
   "main": "lib/index.js",
   "license": "EUPL-1.2",
+  "publishConfig": {
+    "access": "public"
+  },
   "version": "0.0.0",
   "jest": {
     "setupFiles": [
