@@ -1,7 +1,10 @@
-import * as Mustache from 'mustache';
 import { Files } from './Files';
 import footer from './footer';
 import header from './header';
+
+// TODO fix that we cannot use an import here because this does not recognize the exports in mustache
+const mustache = require('mustache'); // eslint-disable-line @typescript-eslint/no-require-imports
+
 
 // Load from lambda layer
 const overwriteHeader = Files.loadTemplateOverwrite('/opt/header.mustache');
@@ -27,5 +30,5 @@ export async function render(data: any, template: string, partials?: {[key: stri
     ...data,
   };
 
-  return Mustache.render(template, data, fullPartials);
+  return mustache.render(template, data, fullPartials);
 };
