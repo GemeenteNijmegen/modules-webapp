@@ -1,7 +1,7 @@
 import * as Mustache from 'mustache';
 import { Files } from './Files';
-import * as footer from './footer.mustache';
-import * as header from './header.mustache';
+import footer from './footer';
+import header from './header';
 
 // Load from lambda layer
 const overwriteHeader = Files.loadTemplateOverwrite('/opt/header.mustache');
@@ -17,8 +17,8 @@ const overwriteFooter = Files.loadTemplateOverwrite('/opt/footer.mustache');
  */
 export async function render(data: any, template: string, partials?: {[key: string]: string }) {
   const fullPartials = {
-    header: overwriteHeader ?? header.default,
-    footer: overwriteFooter ?? footer.default,
+    header: overwriteHeader ?? header,
+    footer: overwriteFooter ?? footer,
     ...partials,
   };
 
