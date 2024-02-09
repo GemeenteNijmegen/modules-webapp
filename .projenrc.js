@@ -1,11 +1,10 @@
 const { GemeenteNijmegenCdkLib } = require('@gemeentenijmegen/projen-project-type');
 const project = new GemeenteNijmegenCdkLib({
   author: 'Gemeente Nijmegen',
-  //authorAddress: 'devops@nijmegen.nl',
   cdkVersion: '2.122.0',
   defaultReleaseBranch: 'main',
-  name: 'modules-webapp',
-  repositoryUrl: 'https://github.com/m.dessing/modules-webapp',
+  name: '@gemeentenijmegen/webapp',
+  repositoryUrl: 'https://github.com/gemeentenijmegen/modules-webapp',
   devDeps: [
     '@gemeentenijmegen/projen-project-type',
     '@types/aws-lambda',
