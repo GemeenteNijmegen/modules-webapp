@@ -758,5 +758,61 @@ Set a lambda timeout in miliseconds.
 
 ---
 
+## Classes <a name="Classes" id="Classes"></a>
+
+### Files <a name="Files" id="@gemeentenijmegen/webapp.Files"></a>
+
+#### Initializers <a name="Initializers" id="@gemeentenijmegen/webapp.Files.Initializer"></a>
+
+```typescript
+import { Files } from '@gemeentenijmegen/webapp'
+
+new Files()
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+
+---
+
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@gemeentenijmegen/webapp.Files.loadAuthenticationProfiles">loadAuthenticationProfiles</a></code> | Get the authentication JSON file and parse it. |
+| <code><a href="#@gemeentenijmegen/webapp.Files.loadTemplateOverwrite">loadTemplateOverwrite</a></code> | Check if the template is found in the file system. |
+
+---
+
+##### `loadAuthenticationProfiles` <a name="loadAuthenticationProfiles" id="@gemeentenijmegen/webapp.Files.loadAuthenticationProfiles"></a>
+
+```typescript
+import { Files } from '@gemeentenijmegen/webapp'
+
+Files.loadAuthenticationProfiles()
+```
+
+Get the authentication JSON file and parse it.
+
+##### `loadTemplateOverwrite` <a name="loadTemplateOverwrite" id="@gemeentenijmegen/webapp.Files.loadTemplateOverwrite"></a>
+
+```typescript
+import { Files } from '@gemeentenijmegen/webapp'
+
+Files.loadTemplateOverwrite(path: string)
+```
+
+Check if the template is found in the file system.
+
+###### `path`<sup>Required</sup> <a name="path" id="@gemeentenijmegen/webapp.Files.loadTemplateOverwrite.parameter.path"></a>
+
+- *Type:* string
+
+to template should start with /opt/.
+
+---
+
+
 
 

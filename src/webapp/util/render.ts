@@ -4,8 +4,8 @@ import * as footer from './footer.mustache';
 import * as header from './header.mustache';
 
 // Load from lambda layer
-const overwriteHeader = Files.getTemplateOverwrite('/opt/header.mustache');
-const overwriteFooter = Files.getTemplateOverwrite('/opt/footer.mustache');
+const overwriteHeader = Files.loadTemplateOverwrite('/opt/header.mustache');
+const overwriteFooter = Files.loadTemplateOverwrite('/opt/footer.mustache');
 
 /**
  * Render data in a mustache template

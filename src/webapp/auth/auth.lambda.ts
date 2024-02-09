@@ -4,7 +4,7 @@ import { AuthRequestHandler } from './AuthRequestHandler';
 import { Files } from '../util/Files';
 
 const dynamoDBClient = new DynamoDBClient({ region: process.env.AWS_REGION });
-const profiles = Files.getAuthenticationProfiles();
+const profiles = Files.loadAuthenticationProfiles();
 
 function parseEvent(event: any) {
   return {

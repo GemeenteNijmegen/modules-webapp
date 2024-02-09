@@ -7,7 +7,7 @@ export class Files {
    * @param path to template should start with /opt/
    * @returns template as string or undefined
    */
-  static getTemplateOverwrite(path: string) : undefined | string {
+  static loadTemplateOverwrite(path: string) : undefined | string {
     if (fs.existsSync(path)) {
       console.info(`${path} template overwrite found!`);
       return fs.readFileSync(path).toString('utf8');
@@ -19,7 +19,7 @@ export class Files {
    * Get the authentication JSON file and parse it
    * @returns the list of profiles
    */
-  static getAuthenticationProfiles() : any {
+  static loadAuthenticationProfiles() : any {
     const profiles = JSON.parse(fs.readFileSync('/opt/authentication.json').toString('utf8'));
     console.info('Initializing authentication profiles', profiles);
     return profiles;

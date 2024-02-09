@@ -4,7 +4,7 @@ import { handleLogoutRequest } from './handleLogoutRequest';
 import { Files } from '../util/Files';
 
 const dynamoDBClient = new DynamoDBClient({ region: process.env.AWS_REGION });
-const templateOverwrite = Files.getTemplateOverwrite('/opt/logout.mustache');
+const templateOverwrite = Files.loadTemplateOverwrite('/opt/logout.mustache');
 
 function parseEvent(event: any) {
   return {

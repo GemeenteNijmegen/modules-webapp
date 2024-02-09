@@ -6,8 +6,8 @@ import { Files } from '../util/Files';
 const dynamoDBClient = new DynamoDBClient({ region: process.env.AWS_REGION });
 
 const loginRequestHandler = new LoginRequestHandler({
-  oidcProfiles: Files.getAuthenticationProfiles(),
-  templateOverwrite: Files.getTemplateOverwrite('/opt/login.mustache'),
+  oidcProfiles: Files.loadAuthenticationProfiles(),
+  templateOverwrite: Files.loadTemplateOverwrite('/opt/login.mustache'),
 });
 
 function parseEvent(event: any) {
