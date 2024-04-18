@@ -6,7 +6,7 @@ export class Criticality {
     this.lvl = lvl;
   }
 
-  getAlarmSuffix() {
+  alarmSuffix() {
     return `-${this.lvl}-lvl`;
   }
 

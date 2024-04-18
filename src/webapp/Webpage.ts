@@ -103,7 +103,7 @@ export class Webpage extends Construct {
       }),
       evaluationPeriods: 3,
       threshold: 5,
-      alarmName: `${applicationName}-increased-error-rate-${this.node.id}${criticality.getAlarmSuffix()}`,
+      alarmName: `${applicationName}-increased-error-rate-${this.node.id}${criticality.alarmSuffix()}`,
       alarmDescription: `This alarm triggers if the function ${this.node.id} is logging more than 5 errors over n minutes.`,
       treatMissingData: TreatMissingData.NOT_BREACHING,
     });
