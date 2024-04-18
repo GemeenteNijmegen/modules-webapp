@@ -1,9 +1,10 @@
 import { aws_lambda as Lambda, aws_dynamodb, RemovalPolicy, Duration, Stack } from 'aws-cdk-lib';
-import { Alarm } from 'aws-cdk-lib/aws-cloudwatch';
+import { Alarm, TreatMissingData } from 'aws-cdk-lib/aws-cloudwatch';
 import { IRole } from 'aws-cdk-lib/aws-iam';
 import { LayerVersion } from 'aws-cdk-lib/aws-lambda';
 import { FilterPattern, IFilterPattern, MetricFilter, RetentionDays } from 'aws-cdk-lib/aws-logs';
 import { Construct } from 'constructs';
+import { Criticality } from './Criticality';
 
 type T = Lambda.Function;
 
@@ -85,7 +86,7 @@ export class Webpage extends Construct {
    *
    * @param filterPattern Pattern to filter by (default: containing ERROR)
    */
-  monitor(applicationName: string, filterPattern?: IFilterPattern) {
+  monitor(applicationName: string, criticality: Criticality, filterPattern?: IFilterPattern) {
     const errorMetricFilter = new MetricFilter(this, 'MetricFilter', {
       logGroup: this.lambda.logGroup,
       metricNamespace: `${applicationName}/${this.node.id}`,
@@ -102,8 +103,9 @@ export class Webpage extends Construct {
       }),
       evaluationPeriods: 3,
       threshold: 5,
-      alarmName: `Increased error rate for ${this.node.id} in ${applicationName}`,
+      alarmName: `${applicationName}-increased-error-rate-${this.node.id}${criticality.getAlarmSuffix()}`,
       alarmDescription: `This alarm triggers if the function ${this.node.id} is logging more than 5 errors over n minutes.`,
+      treatMissingData: TreatMissingData.NOT_BREACHING,
     });
     alarm.applyRemovalPolicy(RemovalPolicy.DESTROY);
   }
