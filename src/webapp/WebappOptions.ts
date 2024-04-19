@@ -1,5 +1,6 @@
 import { ICertificate } from 'aws-cdk-lib/aws-certificatemanager';
 import { IHostedZone } from 'aws-cdk-lib/aws-route53';
+import { Criticality } from './Criticality';
 import { OpenIdConnectConnectionProfile } from './OIDCConnectionProfile';
 import { Webpage } from './Webpage';
 
@@ -79,4 +80,9 @@ export interface WebappOptions {
    * Overwrites the default CSP header value
    */
   readonly cspHeaderValue?: string;
+
+  /**
+   * Denotes a general monitoring level for the webapp.
+   */
+  readonly criticality: Criticality;
 }

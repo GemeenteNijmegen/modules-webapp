@@ -1,6 +1,7 @@
 const { GemeenteNijmegenCdkLib } = require('@gemeentenijmegen/projen-project-type');
 const project = new GemeenteNijmegenCdkLib({
   author: 'Gemeente Nijmegen',
+  majorVersion: 1,
   cdkVersion: '2.122.0',
   jsiiVersion: '~5.3.0',
   defaultReleaseBranch: 'main',
