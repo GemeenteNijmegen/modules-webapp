@@ -4,6 +4,7 @@ import { Function, FunctionProps } from 'aws-cdk-lib/aws-lambda';
 import { HostedZone } from 'aws-cdk-lib/aws-route53';
 import { Secret } from 'aws-cdk-lib/aws-secretsmanager';
 import { Construct } from 'constructs';
+import { Criticality } from '../../src/webapp/Criticality';
 import { OpenIdConnectConnectionProfile } from '../../src/webapp/OIDCConnectionProfile';
 import { Webapp } from '../../src/webapp/Webapp';
 import { Webpage } from '../../src/webapp/Webpage';
@@ -51,6 +52,7 @@ export class TestStack extends Stack {
       sessionLifetime: props.sessionLifetime ?? 60,
       alternativeDomainNames: props.alternativeDomainNames,
       cspHeaderValue: props.cspHeader,
+      criticality: new Criticality('high'),
     });
 
     // Test if granting works
