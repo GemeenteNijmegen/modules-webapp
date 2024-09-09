@@ -2,7 +2,7 @@
   "name": "@gemeentenijmegen/webapp",
   "repository": {
     "type": "git",
-    "url": "https://github.com/GemeenteNijmegen"
+    "url": "https://github.com/gemeentenijmegen/modules-webapp"
   },
   "scripts": {
     "build": "npx projen build",
@@ -40,35 +40,35 @@
     "organization": false
   },
   "devDependencies": {
-    "@aws-sdk/types": "^3.496.0",
-    "@axe-core/playwright": "^4.8.3",
-    "@gemeentenijmegen/projen-project-type": "^1.5.4",
+    "@aws-sdk/types": "^3.609.0",
+    "@axe-core/playwright": "^4.10.0",
+    "@gemeentenijmegen/projen-project-type": "^1.8.0",
     "@glen/jest-raw-loader": "^2.0.0",
-    "@playwright/test": "^1.41.1",
-    "@types/aws-lambda": "^8.10.131",
+    "@playwright/test": "^1.47.0",
+    "@types/aws-lambda": "^8.10.145",
     "@types/jest": "^27",
     "@types/mustache": "^4.2.5",
     "@types/node": "^18",
-    "@typescript-eslint/eslint-plugin": "^6",
-    "@typescript-eslint/parser": "^6",
+    "@typescript-eslint/eslint-plugin": "^7",
+    "@typescript-eslint/parser": "^7",
     "aws-cdk-lib": "2.122.0",
-    "aws-sdk-client-mock": "^3.0.1",
+    "aws-sdk-client-mock": "^3.1.0",
     "axios-mock-adapter": "^1.22.0",
+    "commit-and-tag-version": "^12",
     "constructs": "10.0.5",
     "copyfiles": "^2.4.1",
-    "esbuild": "^0.19.12",
+    "esbuild": "^0.23.1",
     "eslint": "^8",
-    "eslint-import-resolver-typescript": "^3.6.1",
-    "eslint-plugin-import": "^2.29.1",
+    "eslint-import-resolver-typescript": "^3.6.3",
+    "eslint-plugin-import": "^2.30.0",
     "jest": "^27",
     "jest-junit": "^15",
     "jsii": "~5.3.0",
-    "jsii-diff": "^1.94.0",
-    "jsii-docgen": "^10.3.9",
-    "jsii-pacmak": "^1.94.0",
+    "jsii-diff": "^1.103.1",
+    "jsii-docgen": "^10.5.0",
+    "jsii-pacmak": "^1.103.1",
     "jsii-rosetta": "~5.3.0",
-    "projen": "^0.79.3",
-    "standard-version": "^9",
+    "projen": "^0.87.0",
     "ts-jest": "^27",
     "typescript": "^5.3.3"
   },
@@ -78,20 +78,20 @@
   },
   "dependencies": {
     "@aws-lambda-powertools/logger": "^1.17.0",
-    "@aws-sdk/client-dynamodb": "^3.496.0",
-    "@aws-sdk/client-secrets-manager": "^3.496.0",
-    "@aws-solutions-constructs/aws-lambda-dynamodb": "^2.49.0",
-    "@gemeentenijmegen/apiclient": "^0.0.10",
-    "@gemeentenijmegen/apigateway-http": "^0.0.7",
-    "@gemeentenijmegen/aws-constructs": "^0.0.4",
-    "@gemeentenijmegen/session": "^0.0.8",
-    "@gemeentenijmegen/utils": "^0.0.5",
-    "axios": "^1.6.5",
-    "cdk-remote-stack": "^2.0.101",
+    "@aws-sdk/client-dynamodb": "^3.645.0",
+    "@aws-sdk/client-secrets-manager": "^3.645.0",
+    "@aws-solutions-constructs/aws-lambda-dynamodb": "^2.68.0",
+    "@gemeentenijmegen/apiclient": "^0.0.18",
+    "@gemeentenijmegen/apigateway-http": "^0.0.15",
+    "@gemeentenijmegen/aws-constructs": "^0.0.21",
+    "@gemeentenijmegen/session": "^0.0.16",
+    "@gemeentenijmegen/utils": "^0.0.17",
+    "axios": "^1.7.7",
+    "cdk-remote-stack": "^2.1.0",
     "cookie": "^0.6.0",
-    "dotenv": "^16.4.0",
+    "dotenv": "^16.4.5",
     "mustache": "^4.2.0",
-    "openid-client": "^5.6.4"
+    "openid-client": "^5.7.0"
   },
   "bundledDependencies": [
     "@aws-lambda-powertools/logger",
@@ -119,6 +119,7 @@
   },
   "version": "0.0.0",
   "jest": {
+    "coverageProvider": "v8",
     "setupFiles": [
       "dotenv/config"
     ],
@@ -145,8 +146,8 @@
       "test"
     ],
     "testMatch": [
-      "<rootDir>/src/**/__tests__/**/*.ts?(x)",
-      "<rootDir>/(test|src)/**/*(*.)@(spec|test).ts?(x)"
+      "<rootDir>/@(src|test)/**/*(*.)@(spec|test).ts?(x)",
+      "<rootDir>/@(src|test)/**/__tests__/**/*.ts?(x)"
     ],
     "clearMocks": true,
     "collectCoverage": true,

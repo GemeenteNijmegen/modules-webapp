@@ -6,7 +6,12 @@ const project = new GemeenteNijmegenCdkLib({
   jsiiVersion: '~5.3.0',
   defaultReleaseBranch: 'main',
   name: '@gemeentenijmegen/webapp',
-  repositoryUrl: 'https://github.com/gemeentenijmegen/modules-webapp',
+  repository: 'https://github.com/gemeentenijmegen/modules-webapp',
+  depsUpgradeOptions: {
+    workflowOptions: {
+      branches: ['main'], // No acceptance branch
+    },
+  },
   devDeps: [
     '@gemeentenijmegen/projen-project-type',
     '@types/aws-lambda',
