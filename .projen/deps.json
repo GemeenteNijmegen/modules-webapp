@@ -26,6 +26,7 @@
     },
     {
       "name": "@types/jest",
+      "version": "^27",
       "type": "build"
     },
     {
@@ -34,7 +35,7 @@
     },
     {
       "name": "@types/node",
-      "version": "^18",
+      "version": "^16 <= 16.18.78",
       "type": "build"
     },
     {
@@ -82,12 +83,13 @@
       "type": "build"
     },
     {
-      "name": "jest",
+      "name": "jest-junit",
+      "version": "^15",
       "type": "build"
     },
     {
-      "name": "jest-junit",
-      "version": "^15",
+      "name": "jest",
+      "version": "^27",
       "type": "build"
     },
     {
@@ -105,12 +107,12 @@
     },
     {
       "name": "jsii-rosetta",
-      "version": "~5.3.0",
+      "version": "1.x",
       "type": "build"
     },
     {
       "name": "jsii",
-      "version": "~5.3.0",
+      "version": "1.x",
       "type": "build"
     },
     {
@@ -119,6 +121,7 @@
     },
     {
       "name": "ts-jest",
+      "version": "^27",
       "type": "build"
     },
     {
@@ -180,6 +183,16 @@
     {
       "name": "openid-client",
       "type": "bundled"
+    },
+    {
+      "name": "@types/babel__traverse",
+      "version": "7.18.2",
+      "type": "override"
+    },
+    {
+      "name": "@types/prettier",
+      "version": "2.6.0",
+      "type": "override"
     },
     {
       "name": "aws-cdk-lib",

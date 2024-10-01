@@ -3,7 +3,6 @@ const project = new GemeenteNijmegenCdkLib({
   author: 'Gemeente Nijmegen',
   majorVersion: 1,
   cdkVersion: '2.122.0',
-  jsiiVersion: '~5.3.0',
   defaultReleaseBranch: 'main',
   name: '@gemeentenijmegen/webapp',
   repository: 'https://github.com/gemeentenijmegen/modules-webapp',
