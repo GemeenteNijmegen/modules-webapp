@@ -3,7 +3,7 @@ const project = new GemeenteNijmegenCdkLib({
   author: 'Gemeente Nijmegen',
   majorVersion: 1,
   cdkVersion: '2.122.0',
-  jsiiVersion: '~5.3.0',
+  jsiiVersion: '~5.5.0', // Without it defaults to v1.0 and it should be the same as/close to the typescript version https://www.npmjs.com/package/jsii
   defaultReleaseBranch: 'main',
   name: '@gemeentenijmegen/webapp',
   repository: 'https://github.com/gemeentenijmegen/modules-webapp',
