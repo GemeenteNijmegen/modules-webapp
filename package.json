@@ -2,7 +2,7 @@
   "name": "@gemeentenijmegen/webapp",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gemeentenijmegen/modules-webapp"
+    "url": "https://github.com/gemeentenijmegen/modules-webapp.git"
   },
   "scripts": {
     "build": "npx projen build",
