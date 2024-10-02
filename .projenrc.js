@@ -6,7 +6,7 @@ const project = new GemeenteNijmegenCdkLib({
   jsiiVersion: '~5.5.0', // Without it defaults to v1.0 and it should be the same as/close to the typescript version https://www.npmjs.com/package/jsii
   defaultReleaseBranch: 'main',
   name: '@gemeentenijmegen/webapp',
-  repository: 'https://github.com/gemeentenijmegen/modules-webapp.git',
+  repository: 'https://github.com/GemeenteNijmegen/modules-webapp.git',
   depsUpgradeOptions: {
     workflowOptions: {
       branches: ['main'], // No acceptance branch
