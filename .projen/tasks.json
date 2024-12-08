@@ -194,6 +194,9 @@
     "eslint": {
       "name": "eslint",
       "description": "Runs eslint against the codebase",
+      "env": {
+        "ESLINT_USE_FLAT_CONFIG": "false"
+      },
       "steps": [
         {
           "exec": "eslint --ext .ts,.tsx --fix --no-error-on-unmatched-pattern $@ src test build-tools .projenrc.js",
@@ -345,13 +348,13 @@
       },
       "steps": [
         {
-          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@aws-sdk/types,@axe-core/playwright,@gemeentenijmegen/projen-project-type,@glen/jest-raw-loader,@playwright/test,@types/aws-lambda,@types/jest,@types/mustache,@types/node,aws-sdk-client-mock,axios-mock-adapter,copyfiles,esbuild,eslint-import-resolver-typescript,eslint-plugin-import,jest,jsii-diff,jsii-pacmak,projen,ts-jest,typescript,@aws-lambda-powertools/logger,@aws-sdk/client-dynamodb,@aws-sdk/client-secrets-manager,@aws-solutions-constructs/aws-lambda-dynamodb,@gemeentenijmegen/apiclient,@gemeentenijmegen/apigateway-http,@gemeentenijmegen/session,@gemeentenijmegen/utils,axios,cdk-remote-stack,cookie,dotenv,mustache,openid-client,@gemeentenijmegen/aws-constructs"
+          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --no-deprecated --dep=dev,peer,prod,optional --filter=@aws-sdk/types,@axe-core/playwright,@gemeentenijmegen/projen-project-type,@glen/jest-raw-loader,@playwright/test,@types/aws-lambda,@types/jest,@types/mustache,@types/node,aws-sdk-client-mock,axios-mock-adapter,copyfiles,esbuild,eslint-import-resolver-typescript,eslint-plugin-import,jest,jsii-diff,jsii-pacmak,projen,ts-jest,typescript,@aws-lambda-powertools/logger,@aws-sdk/client-dynamodb,@aws-sdk/client-secrets-manager,@aws-solutions-constructs/aws-lambda-dynamodb,@gemeentenijmegen/apiclient,@gemeentenijmegen/apigateway-http,@gemeentenijmegen/session,@gemeentenijmegen/utils,axios,cdk-remote-stack,cookie,dotenv,mustache,openid-client,@gemeentenijmegen/aws-constructs"
         },
         {
           "exec": "yarn install --check-files"
         },
         {
-          "exec": "yarn upgrade @aws-sdk/types @axe-core/playwright @gemeentenijmegen/projen-project-type @glen/jest-raw-loader @playwright/test @types/aws-lambda @types/jest @types/mustache @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser aws-sdk-client-mock axios-mock-adapter commit-and-tag-version copyfiles esbuild eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit jsii-diff jsii-docgen jsii-pacmak jsii-rosetta jsii projen ts-jest typescript @aws-lambda-powertools/logger @aws-sdk/client-dynamodb @aws-sdk/client-secrets-manager @aws-solutions-constructs/aws-lambda-dynamodb @gemeentenijmegen/apiclient @gemeentenijmegen/apigateway-http @gemeentenijmegen/session @gemeentenijmegen/utils axios cdk-remote-stack cookie dotenv mustache openid-client aws-cdk-lib constructs @gemeentenijmegen/aws-constructs"
+          "exec": "yarn upgrade @aws-sdk/types @axe-core/playwright @gemeentenijmegen/projen-project-type @glen/jest-raw-loader @playwright/test @stylistic/eslint-plugin @types/aws-lambda @types/jest @types/mustache @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser aws-sdk-client-mock axios-mock-adapter commit-and-tag-version copyfiles esbuild eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit jsii-diff jsii-docgen jsii-pacmak jsii-rosetta jsii projen ts-jest typescript @aws-lambda-powertools/logger @aws-sdk/client-dynamodb @aws-sdk/client-secrets-manager @aws-solutions-constructs/aws-lambda-dynamodb @gemeentenijmegen/apiclient @gemeentenijmegen/apigateway-http @gemeentenijmegen/session @gemeentenijmegen/utils axios cdk-remote-stack cookie dotenv mustache openid-client aws-cdk-lib constructs @gemeentenijmegen/aws-constructs"
         },
         {
           "exec": "npx projen"
