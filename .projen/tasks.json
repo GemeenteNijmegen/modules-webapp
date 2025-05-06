@@ -62,7 +62,7 @@
       "description": "Create a JavaScript bundle from src/webapp/auth/auth.lambda.ts",
       "steps": [
         {
-          "exec": "esbuild --bundle src/webapp/auth/auth.lambda.ts --target=\"node20\" --platform=\"node\" --outfile=\"assets/webapp/auth/auth.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/* --loader:.mustache=text"
+          "exec": "esbuild --bundle src/webapp/auth/auth.lambda.ts --target=\"node22\" --platform=\"node\" --outfile=\"assets/webapp/auth/auth.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/* --loader:.mustache=text"
         }
       ]
     },
@@ -71,7 +71,7 @@
       "description": "Continuously update the JavaScript bundle from src/webapp/auth/auth.lambda.ts",
       "steps": [
         {
-          "exec": "esbuild --bundle src/webapp/auth/auth.lambda.ts --target=\"node20\" --platform=\"node\" --outfile=\"assets/webapp/auth/auth.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/* --loader:.mustache=text --watch"
+          "exec": "esbuild --bundle src/webapp/auth/auth.lambda.ts --target=\"node22\" --platform=\"node\" --outfile=\"assets/webapp/auth/auth.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/* --loader:.mustache=text --watch"
         }
       ]
     },
@@ -80,7 +80,7 @@
       "description": "Create a JavaScript bundle from src/webapp/login/login.lambda.ts",
       "steps": [
         {
-          "exec": "esbuild --bundle src/webapp/login/login.lambda.ts --target=\"node20\" --platform=\"node\" --outfile=\"assets/webapp/login/login.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/* --loader:.mustache=text"
+          "exec": "esbuild --bundle src/webapp/login/login.lambda.ts --target=\"node22\" --platform=\"node\" --outfile=\"assets/webapp/login/login.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/* --loader:.mustache=text"
         }
       ]
     },
@@ -89,7 +89,7 @@
       "description": "Continuously update the JavaScript bundle from src/webapp/login/login.lambda.ts",
       "steps": [
         {
-          "exec": "esbuild --bundle src/webapp/login/login.lambda.ts --target=\"node20\" --platform=\"node\" --outfile=\"assets/webapp/login/login.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/* --loader:.mustache=text --watch"
+          "exec": "esbuild --bundle src/webapp/login/login.lambda.ts --target=\"node22\" --platform=\"node\" --outfile=\"assets/webapp/login/login.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/* --loader:.mustache=text --watch"
         }
       ]
     },
@@ -98,7 +98,7 @@
       "description": "Create a JavaScript bundle from src/webapp/logout/logout.lambda.ts",
       "steps": [
         {
-          "exec": "esbuild --bundle src/webapp/logout/logout.lambda.ts --target=\"node20\" --platform=\"node\" --outfile=\"assets/webapp/logout/logout.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/* --loader:.mustache=text"
+          "exec": "esbuild --bundle src/webapp/logout/logout.lambda.ts --target=\"node22\" --platform=\"node\" --outfile=\"assets/webapp/logout/logout.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/* --loader:.mustache=text"
         }
       ]
     },
@@ -107,7 +107,7 @@
       "description": "Continuously update the JavaScript bundle from src/webapp/logout/logout.lambda.ts",
       "steps": [
         {
-          "exec": "esbuild --bundle src/webapp/logout/logout.lambda.ts --target=\"node20\" --platform=\"node\" --outfile=\"assets/webapp/logout/logout.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/* --loader:.mustache=text --watch"
+          "exec": "esbuild --bundle src/webapp/logout/logout.lambda.ts --target=\"node22\" --platform=\"node\" --outfile=\"assets/webapp/logout/logout.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/* --loader:.mustache=text --watch"
         }
       ]
     },
