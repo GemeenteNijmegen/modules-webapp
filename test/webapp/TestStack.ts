@@ -17,7 +17,7 @@ export interface TestStackProps {
   defaultPath?: string;
   oidcProfiles: OpenIdConnectConnectionProfile[];
   addHomePage?: boolean;
-  postLoginProcessor? : Webpage;
+  postLoginProcessor?: Webpage;
   sessionLifetime?: number;
   cspHeader?: string;
 }
