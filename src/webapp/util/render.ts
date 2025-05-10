@@ -18,7 +18,7 @@ const overwriteFooter = Files.loadTemplateOverwrite('/opt/footer.mustache');
  * @param {{[key:string] : string} | undefined} partials name and template string
  * @returns string
  */
-export async function render(data: any, template: string, partials?: {[key: string]: string }) {
+export async function render(data: any, template: string, partials?: { [key: string]: string }) {
   const fullPartials = {
     header: overwriteHeader ?? header,
     footer: overwriteFooter ?? footer,
