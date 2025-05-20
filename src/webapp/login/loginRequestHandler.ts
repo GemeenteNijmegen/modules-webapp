@@ -36,7 +36,7 @@ export class LoginRequestHandler {
     }
 
     // Construct new sesssion and redirect urls
-    const states: {[key: string]: string} = {};
+    const states: { [key: string]: string } = {};
     const authenticationOptions: any[] = [];
     for (const profile of this.config.oidcProfiles) {
       let OIDC = new OpenIDConnect({
