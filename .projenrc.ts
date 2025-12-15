@@ -1,12 +1,15 @@
-const { GemeenteNijmegenCdkLib } = require('@gemeentenijmegen/projen-project-type');
+import { GemeenteNijmegenCdkLib } from '@gemeentenijmegen/projen-project-type';
+import { Transform } from 'projen/lib/javascript/index.js';
 const project = new GemeenteNijmegenCdkLib({
   author: 'Gemeente Nijmegen',
+  authorAddress: 'devops@nijmegen.nl',
   majorVersion: 1,
-  cdkVersion: '2.122.0',
-  jsiiVersion: '~5.5.0', // Without it defaults to v1.0 and it should be the same as/close to the typescript version https://www.npmjs.com/package/jsii
-  defaultReleaseBranch: 'main',
+  cdkVersion: '2.232.2', // pinned version in CdkLib type
+  projenrcTs: true,
   name: '@gemeentenijmegen/webapp',
-  repository: 'https://github.com/GemeenteNijmegen/modules-webapp.git',
+  repositoryUrl: 'git://github.com/GemeenteNijmegen/modules-webapp',
+  repository: 'git://github.com/GemeenteNijmegen/modules-webapp',
+  defaultReleaseBranch: 'main',
   depsUpgradeOptions: {
     workflowOptions: {
       branches: ['main'], // No acceptance branch
@@ -26,9 +29,6 @@ const project = new GemeenteNijmegenCdkLib({
     '@glen/jest-raw-loader',
     '@types/mustache',
   ],
-  deps: [
-    '@gemeentenijmegen/aws-constructs',
-  ],
   bundledDeps: [
     '@aws-lambda-powertools/logger',
     '@aws-sdk/client-dynamodb',
@@ -37,6 +37,7 @@ const project = new GemeenteNijmegenCdkLib({
     '@gemeentenijmegen/apigateway-http',
     '@gemeentenijmegen/session',
     '@gemeentenijmegen/utils',
+    '@gemeentenijmegen/aws-constructs',
     'dotenv',
     '@aws-solutions-constructs/aws-lambda-dynamodb',
     'cdk-remote-stack',
@@ -52,8 +53,8 @@ const project = new GemeenteNijmegenCdkLib({
         'js', 'json', 'jsx', 'ts', 'tsx', 'node', 'mustache',
       ],
       transform: {
-        '\\.[jt]sx?$': 'ts-jest',
-        '^.+\\.mustache$': '@glen/jest-raw-loader',
+        '\\.[jt]sx?$': new Transform('ts-jest'),
+        '^.+\\.mustache$': new Transform('@glen/jest-raw-loader'),
       },
       testPathIgnorePatterns: ['/node_modules/', '/cdk.out', '/test/playwright'],
       roots: ['src', 'test'],
