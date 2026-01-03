@@ -2,7 +2,7 @@
 
 * text=auto eol=lf
 *.snap linguist-generated
-/.eslintrc.json linguist-generated
+/.eslintrc.json linguist-generated linguist-language=JSON-with-Comments
 /.gitattributes linguist-generated
 /.github/pull_request_template.md linguist-generated
 /.github/workflows/auto-merge.yml linguist-generated
@@ -23,5 +23,5 @@
 /src/webapp/auth/auth-function.ts linguist-generated
 /src/webapp/login/login-function.ts linguist-generated
 /src/webapp/logout/logout-function.ts linguist-generated
-/tsconfig.dev.json linguist-generated
+/tsconfig.dev.json linguist-generated linguist-language=JSON-with-Comments
 /yarn.lock linguist-generated
