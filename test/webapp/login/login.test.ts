@@ -1,13 +1,13 @@
 import { writeFile } from 'fs';
 import * as path from 'path';
-import { DynamoDBClient, GetItemCommandOutput, GetItemCommand } from '@aws-sdk/client-dynamodb';
+import { DynamoDBClient, GetItemCommand, GetItemCommandOutput } from '@aws-sdk/client-dynamodb';
 import { mockClient } from 'aws-sdk-client-mock';
 import { LoginRequestHandler } from '../../../src/webapp/login/loginRequestHandler';
 import {
-  yiviProfile,
   digiDProfile,
   immediateRedirectProfile,
   oidcProfiles,
+  yiviProfile,
 } from '../OIDCProfiles';
 
 const ddbMock = mockClient(DynamoDBClient);
@@ -163,6 +163,7 @@ test('DynamoDB error', async () => {
 
     await loginRequestHandler.handleRequest('session=12345', dynamoDBClient);
   } catch (error) {
+    console.error(error);
     failed = true;
   }
   expect(ddbMock.calls().length).toBe(1);
