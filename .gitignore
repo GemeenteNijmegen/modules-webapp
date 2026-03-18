@@ -59,4 +59,5 @@ tsconfig.json
 !/src/webapp/logout/logout-function.ts
 !/.github/workflows/emergency.yml
 !/.github/workflows/auto-merge.yml
+!/.nvmrc
 !/.projenrc.ts

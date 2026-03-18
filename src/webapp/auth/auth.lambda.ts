@@ -14,7 +14,7 @@ function parseEvent(event: any) {
   };
 }
 
-export async function handler(event: any, _context: any):Promise<ApiGatewayV2Response> {
+export async function handler(event: any): Promise<ApiGatewayV2Response> {
   try {
     const params = parseEvent(event);
     const requestHandler = new AuthRequestHandler({

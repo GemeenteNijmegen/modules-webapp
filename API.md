@@ -45,6 +45,7 @@ new Webapp(scope: Construct, id: string, props: WebappOptions)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@gemeentenijmegen/webapp.Webapp.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@gemeentenijmegen/webapp.Webapp.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@gemeentenijmegen/webapp.Webapp.addPage">addPage</a></code> | Add another page to the webapp. |
 
 ---
@@ -56,6 +57,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@gemeentenijmegen/webapp.Webapp.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@gemeentenijmegen/webapp.Webapp.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `addPage` <a name="addPage" id="@gemeentenijmegen/webapp.Webapp.addPage"></a>
 
@@ -204,6 +226,7 @@ new Webpage(scope: Construct, id: string, props: WebpageProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@gemeentenijmegen/webapp.Webpage.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@gemeentenijmegen/webapp.Webpage.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@gemeentenijmegen/webapp.Webpage.addLambdaLayer">addLambdaLayer</a></code> | Add the shared resources layer that is constructed for this webapp. |
 | <code><a href="#@gemeentenijmegen/webapp.Webpage.addStandardEnvironment">addStandardEnvironment</a></code> | Add standard environment variables to the lambda. |
 | <code><a href="#@gemeentenijmegen/webapp.Webpage.allowSessionAccess">allowSessionAccess</a></code> | Grant access to the session store and add SESSION_TABLE environment variable. |
@@ -219,6 +242,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@gemeentenijmegen/webapp.Webpage.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@gemeentenijmegen/webapp.Webpage.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `addLambdaLayer` <a name="addLambdaLayer" id="@gemeentenijmegen/webapp.Webpage.addLambdaLayer"></a>
 

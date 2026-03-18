@@ -9,7 +9,7 @@ import {
 
 
 jest.spyOn(OpenIDConnect.prototype, 'authorize').mockImplementation(
-  async (_code: string, _states: string[], _returnedState: string) => {
+  async () => {
     const claims: IdTokenClaims = {
       aud: 'app',
       exp: 0,

@@ -14,7 +14,7 @@ function parseEvent(event: any) {
   return { cookies: event?.cookies?.join(';') };
 }
 
-export async function handler (event: any, _context: any):Promise<ApiGatewayV2Response> {
+export async function handler(event: any): Promise<ApiGatewayV2Response> {
   try {
     const params = parseEvent(event);
     const response = await loginRequestHandler.handleRequest(params.cookies, dynamoDBClient);
